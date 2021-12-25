@@ -1,0 +1,28 @@
+{
+  "name": "@jjangga0214/configs",
+  "version": "0.0.1",
+  "description": "Personal, opinionated packages and configs for nodejs and typescript based projects",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "jjangga0214"
+  ]
+}
