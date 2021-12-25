@@ -1,16 +1,41 @@
 # `@jjangga0214/eslint-config`
 
-Personal, opinionated eslint config and development environment.
+A sharable config package and development environment for [eslint](https://eslint.org).
 
-## Usage
+## Installation
 
-```shell
+```sh
 npm install --save-dev @jjangga0214/eslint-config
 # or
 yarn add --dev @jjangga0214/eslint-config
 # or
 pnpm add --save-dev @jjangga0214/eslint-config
 ```
+
+## Note
+
+- This package includes the CLI `eslint` as well as plugin and config packages (e.g. `eslint-config-*`, `eslint-plugin-*`, etc). You do not need to manually install them.
+- Check out **peerDependencies**.
+
+## Development
+
+[REF](https://eslint.org/docs/developer-guide/shareable-configs)
+
+## Usage
+
+**package.json**:
+
+```json
+{
+  "name": "your-cool-library",
+  "eslintConfig": {
+    "extends": "@jjangga0214/eslint-config"
+  },
+  "eslintIgnore": ["hello.js", "world.js"]
+}
+```
+
+Or you can import it into javascript config file.
 
 **.eslintrc.js**:
 
@@ -19,12 +44,3 @@ module.exports = {
   extends: "@jjangga0214/eslint-config",
 };
 ```
-
-## Notes
-
-- This package includes the CLI `eslint` as well as plugin and config packages (e.g. `eslint-config-*`, `eslint-plugin-*`, etc). You do not have to manually install them.
-- Check out **peerDependencies**.
-
-## Development
-
-REF: <https://eslint.org/docs/developer-guide/shareable-configs>

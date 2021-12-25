@@ -1,10 +1,10 @@
 # `@jjangga0214/tsconfig`
 
-A sharable package for typescript config file.
+A sharable config package for [Typescript](https://www.typescriptlang.org).
 
 ## Installation
 
-```shell
+```sh
 npm install --save-dev @jjangga0214/tsconfig
 # or
 yarn add --dev @jjangga0214/tsconfig
@@ -18,7 +18,7 @@ pnpm add --save-dev @jjangga0214/tsconfig
 - This package includes not only tsconfig.json, but also CLIs needed in typescript development environment: [`typescript`](https://www.npmjs.com/package/typescript), [`ts-node`](https://www.npmjs.com/package/ts-node) and so on.
 - [`ts-node`](https://typestrong.org/ts-node/) is configured to use [`swc`](https://github.com/swc-project/swc) under the hood. [REF](https://typestrong.org/ts-node/docs/transpilers)
 
-## Example for a single-project repo
+## Usage for a single-project repo
 
 **tsconfig.json**:
 
@@ -37,7 +37,7 @@ pnpm add --save-dev @jjangga0214/tsconfig
 }
 ```
 
-### Example for a monorepo
+### Usage for a monorepo
 
 **tsconfig.json**:
 

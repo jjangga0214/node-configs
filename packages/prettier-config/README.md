@@ -1,14 +1,26 @@
 # `@jjangga0214/prettier-config`
 
-## Usage
+A sharable config package and development environment for [prettier](https://prettier.io).
 
-```shell
+## Installation
+
+```sh
 npm install --save-dev @jjangga0214/prettier-config
 # or
 yarn add --dev @jjangga0214/prettier-config
 # or
 pnpm add --save-dev @jjangga0214/prettier-config
 ```
+
+## Note
+
+- This package includes the CLI `prettier` as well as config. You do not have to manually install it.
+
+## Development
+
+- [REF](https://prettier.io/docs/en/configuration.html#sharing-configurations)
+
+## Usage
 
 **package.json**:
 
@@ -30,11 +42,3 @@ module.exports = {
   // You can override some fileds
 };
 ```
-
-## Notes
-
-This package includes the CLI `prettier` as well as config. You do not have to manually install it.
-
-## Development
-
-REF: <https://prettier.io/docs/en/configuration.html#sharing-configurations>

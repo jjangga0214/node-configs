@@ -1,7 +1,7 @@
 {
   "name": "@jjangga0214/configs",
   "version": "0.0.1",
-  "description": "Personal, opinionated packages and configs for nodejs and typescript based projects",
+  "description": "Monorepo for sharable config packages and development environment for nodejs and typescript projects.",
   "license": "MIT",
   "engines": {
     "node": ">=16",
@@ -16,13 +16,8 @@
   },
   "homepage": "https://github.com/jjangga0214/node-configs",
   "author": {
-    "name": "Gil B. Chan",
+    "name": "GIL B. Chan",
     "email": "bnbcmindnpass@gmail.com",
     "url": "https://github.com/jjangga0214"
-  },
-  "keywords": [
-    "boilerplate",
-    "config",
-    "jjangga0214"
-  ]
+  }
 }

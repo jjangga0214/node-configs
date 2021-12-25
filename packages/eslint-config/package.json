@@ -1,7 +1,7 @@
 {
   "name": "@jjangga0214/eslint-config",
   "version": "1.0.0",
-  "description": "Personal, opinionated eslint config and development environment",
+  "description": "A sharable config package and development environment for eslint",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -19,13 +19,14 @@
   },
   "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/eslint-config",
   "author": {
-    "name": "Gil B. Chan",
+    "name": "GIL B. Chan",
     "email": "bnbcmindnpass@gmail.com",
     "url": "https://github.com/jjangga0214"
   },
   "keywords": [
     "boilerplate",
     "config",
+    "sharable",
     "env",
     "eslint"
   ],

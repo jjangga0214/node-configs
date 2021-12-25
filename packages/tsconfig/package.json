@@ -1,7 +1,7 @@
 {
   "name": "@jjangga0214/tsconfig",
   "version": "1.0.0",
-  "description": "Personal, opinionated typescript config and development environment",
+  "description": "A sharable config package for Typescript",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -19,12 +19,13 @@
   },
   "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/tsconfig",
   "author": {
-    "name": "Gil B. Chan",
+    "name": "GIL B. Chan",
     "email": "bnbcmindnpass@gmail.com",
     "url": "https://github.com/jjangga0214"
   },
   "keywords": [
     "boilerplate",
+    "sharable",
     "config",
     "env",
     "typescript",
