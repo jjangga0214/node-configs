@@ -1,0 +1,51 @@
+{
+  "name": "@jjangga0214/eslint-config",
+  "version": "1.0.0",
+  "description": "Personal, opinionated eslint config and development environment",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/eslint-config",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "env",
+    "eslint"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  },
+  "peerDependencies": {
+    "@jjangga0214/prettier-config": "workspace:^"
+  }
+}

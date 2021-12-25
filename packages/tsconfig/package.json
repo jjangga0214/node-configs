@@ -1,0 +1,44 @@
+{
+  "name": "@jjangga0214/tsconfig",
+  "version": "1.0.0",
+  "description": "Personal, opinionated typescript config and development environment",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "tsconfig.json",
+  "files": [
+    "tsconfig.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/tsconfig",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "env",
+    "typescript",
+    "tsconfig",
+    "ts"
+  ],
+  "dependencies": {
+    "@swc/core": "^1.2.118",
+    "@swc/helpers": "^0.2.14",
+    "@types/node": "^16.11.11",
+    "regenerator-runtime": "^0.13.9",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.2"
+  }
+}

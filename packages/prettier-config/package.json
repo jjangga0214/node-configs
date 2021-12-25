@@ -1,0 +1,35 @@
+{
+  "name": "@jjangga0214/prettier-config",
+  "version": "1.0.0",
+  "description": "Personal, opinionated pettier config and development environment",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/prettier-config",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "env",
+    "prettier"
+  ],
+  "dependencies": {
+    "prettier": "^2.5.1"
+  }
+}

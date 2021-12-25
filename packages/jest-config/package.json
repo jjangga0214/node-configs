@@ -1,0 +1,42 @@
+{
+  "name": "@jjangga0214/jest-config",
+  "version": "1.0.0",
+  "description": "Personal, opinionated jest config and development environment",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/jest-config",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "env",
+    "jest"
+  ],
+  "dependencies": {
+    "@swc/jest": "^0.2.11",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "jest-junit": "^13.0.0",
+    "ts-jest": "^27.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
