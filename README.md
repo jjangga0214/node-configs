@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-ff4081.svg?style=flat-square&labelColor=black)](./LICENSE)
 
-Personal, opinionated sharable configs for nodejs and typescript based projects.
+Monorepo for personally opinionated sharable configuration packages for nodejs and typescript projects
 
 - [`@jjangga0214/commitlint-config`](./packages/commitlint-config)
 - [`@jjangga0214/eslint-config`](./packages/eslint-config)

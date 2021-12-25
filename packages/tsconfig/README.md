@@ -1,6 +1,8 @@
 # `@jjangga0214/tsconfig`
 
-## Usage
+A sharable package for typescript config file.
+
+## Installation
 
 ```shell
 npm install --save-dev @jjangga0214/tsconfig
@@ -10,11 +12,13 @@ yarn add --dev @jjangga0214/tsconfig
 pnpm add --save-dev @jjangga0214/tsconfig
 ```
 
-Typescript resolves paths relative to the configuration file. Thus, path-related fields, like `outDir`, `rootDir`, `baseUrl`, `paths`, `tsBuildInfoFile`, etc, are not set in this config. Thus, you need to configure it manually.
+## Note
 
-REF: <https://github.com/Microsoft/TypeScript/issues/29172>
+- Path-related fields, like `outDir`, `rootDir`, `baseUrl`, `paths`, `tsBuildInfoFile`, etc, are not set in this config. That's because Typescript resolves paths relative to the configuration file. Thus, you need to configure it manually. [REF](https://github.com/Microsoft/TypeScript/issues/29172)
+- This package includes not only tsconfig.json, but also CLIs needed in typescript development environment: [`typescript`](https://www.npmjs.com/package/typescript), [`ts-node`](https://www.npmjs.com/package/ts-node) and so on.
+- [`ts-node`](https://typestrong.org/ts-node/) is configured to use [`swc`](https://github.com/swc-project/swc) under the hood. [REF](https://typestrong.org/ts-node/docs/transpilers)
 
-### For single-project repo
+## Example for a single-project repo
 
 **tsconfig.json**:
 
@@ -33,7 +37,7 @@ REF: <https://github.com/Microsoft/TypeScript/issues/29172>
 }
 ```
 
-### For monorepo
+### Example for a monorepo
 
 **tsconfig.json**:
 
@@ -64,8 +68,3 @@ REF: <https://github.com/Microsoft/TypeScript/issues/29172>
   }
 }
 ```
-
-## Notes
-
-- This package includes not only tsconfig.json, but also CLIs needed in typescript development environment: `typescript`, `ts-node` and so on.
-- `ts-node` is configured to use `swc` under the hood. [REF](https://typestrong.org/ts-node/docs/transpilers)
