@@ -28,7 +28,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/tsconfig
 ## Note
 
 - Path-related fields, like `outDir`, `rootDir`, `baseUrl`, `paths`, `tsBuildInfoFile`, etc, are not set in this config. That's because Typescript resolves paths relative to the configuration file. Thus, you need to configure it manually. [REF](https://github.com/Microsoft/TypeScript/issues/29172)
-- This package includes not only tsconfig.json, but also CLIs needed in typescript development environment: [`ts-node`](https://www.npmjs.com/package/ts-node), [ts-node-dev](https://github.com/wclr/ts-node-dev), [tsconfig-paths](https://github.com/dividab/tsconfig-paths),  and so on.
+- This package includes not only tsconfig.json, but also packages needed in typescript development environment, like [tsconfig-paths](https://github.com/dividab/tsconfig-paths) and so on.
 - [`ts-node`](https://typestrong.org/ts-node/) is configured to use [`swc`](https://github.com/swc-project/swc) under the hood. [REF](https://typestrong.org/ts-node/docs/transpilers)
 
 ## Usage for a single-project repo

@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/tsconfig",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A sharable config package for Typescript",
   "license": "MIT",
   "publishConfig": {
@@ -35,13 +35,21 @@
   "dependencies": {
     "@swc/helpers": "^0.2.14",
     "regenerator-runtime": "^0.13.9",
-    "ts-node": "^10.4.0",
-    "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0"
   },
   "peerDependencies": {
     "typescript": ">=4.0.0",
     "@swc/core": ">=1.0.0",
-    "@types/node": ">=16.0.0"
+    "@types/node": ">=16.0.0",
+    "ts-node": ">=10.0.0",
+    "ts-node-dev": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ts-node": {
+      "optional": true
+    },
+    "ts-node-dev": {
+      "optional": true
+    }
   }
 }
