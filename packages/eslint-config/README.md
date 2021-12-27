@@ -12,10 +12,17 @@ yarn add --dev @jjangga0214/eslint-config
 pnpm add --save-dev @jjangga0214/eslint-config
 ```
 
-And also install peerDependencies.
+And you should also install peerDependencies manually.
+
+Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peerdeps/documentation).
 
 ```sh
+# For npm
 npx install-peerdeps --dev @jjangga0214/eslint-config
+# For yarn
+npx install-peerdeps --yarn --dev @jjangga0214/eslint-config
+# For pnpm
+npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 ```
 
 ## Note
