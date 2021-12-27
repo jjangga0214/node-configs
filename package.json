@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Monorepo for sharable config packages and development environment for nodejs and typescript projects.",
   "license": "MIT",
+  "private": true,
   "engines": {
     "node": ">=16",
     "pnpm": ">=3"
