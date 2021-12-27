@@ -22,7 +22,7 @@ pnpm add --save-dev @jjangga0214/tsconfig
 
 **tsconfig.json**:
 
-```json
+```jsonc
 {
   "extends": "@jjangga0214/tsconfig/tsconfig.json",
   "compilerOptions": {
@@ -41,7 +41,7 @@ pnpm add --save-dev @jjangga0214/tsconfig
 
 **tsconfig.json**:
 
-```json
+```jsonc
 {
   "extends": "@jjangga0214/tsconfig/tsconfig.json",
   "compilerOptions": {

@@ -24,7 +24,7 @@ pnpm add --save-dev @jjangga0214/prettier-config
 
 **package.json**:
 
-```json
+```jsonc
 {
   "name": "your-cool-library",
   "prettier": "@jjangga0214/prettier-config"

@@ -25,7 +25,7 @@ pnpm add --save-dev @jjangga0214/eslint-config
 
 **package.json**:
 
-```json
+```jsonc
 {
   "name": "your-cool-library",
   "eslintConfig": {
