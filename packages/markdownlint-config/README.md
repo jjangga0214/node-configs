@@ -46,3 +46,9 @@ npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 ```txt
 // specify whatever pattern needed
 ```
+
+## Usage for import
+
+```js
+import markdownlintConfig from "@jjangga0214/markdownlint-config";
+```

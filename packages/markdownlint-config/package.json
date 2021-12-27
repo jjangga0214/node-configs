@@ -1,13 +1,14 @@
 {
   "name": "@jjangga0214/markdownlint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A sharable config package and development environment for markdownlint",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.json",
+  "main": "index.js",
   "files": [
+    "index.js",
     "index.json"
   ],
   "repository": {
