@@ -1,13 +1,10 @@
 {
   "name": "@jjangga0214/commitlint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "main": "src/index.js",
   "files": [
@@ -41,5 +38,8 @@
     "@commitlint/config-conventional": "^15.0.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0"
+  },
+  "peerDependencies": {
+    "@types/node": "*"
   }
 }

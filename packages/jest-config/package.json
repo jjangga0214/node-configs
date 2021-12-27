@@ -1,13 +1,10 @@
 {
   "name": "@jjangga0214/jest-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A sharable config package and development environment for jest",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "main": "src/index.js",
   "files": [
@@ -39,6 +36,10 @@
     "jest": "^27.4.3",
     "jest-junit": "^13.0.0",
     "ts-jest": "^27.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^4.0.0",
+    "@swc/core": ">=1.0.0"
   },
   "scripts": {
     "test": "jest"

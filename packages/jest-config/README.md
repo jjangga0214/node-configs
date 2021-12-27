@@ -12,6 +12,12 @@ yarn add --dev @jjangga0214/jest-config
 pnpm add --save-dev @jjangga0214/jest-config
 ```
 
+And also install peerDependencies.
+
+```sh
+npx install-peerdeps --dev @jjangga0214/jest-config
+```
+
 ## Note
 
 - This package includes not only config file and related packages(e.g.[`ts-jest`](https://www.npmjs.com/package/ts-jest), [`@swc/jest`](https://www.npmjs.com/package/@swc/jest), but also the CLI [`jest`](https://www.npmjs.com/package/jest). You don't need to manually install them.

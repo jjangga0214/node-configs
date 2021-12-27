@@ -12,6 +12,12 @@ yarn add --dev @jjangga0214/prettier-config
 pnpm add --save-dev @jjangga0214/prettier-config
 ```
 
+And also install peerDependencies.
+
+```sh
+npx install-peerdeps --dev @jjangga0214/prettier-config
+```
+
 ## Note
 
 - This package includes the CLI `prettier` as well as config. You do not have to manually install it.

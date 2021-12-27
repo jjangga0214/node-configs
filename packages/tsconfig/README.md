@@ -12,6 +12,12 @@ yarn add --dev @jjangga0214/tsconfig
 pnpm add --save-dev @jjangga0214/tsconfig
 ```
 
+And also install peerDependencies.
+
+```sh
+npx install-peerdeps --dev @jjangga0214/tsconfig
+```
+
 ## Note
 
 - Path-related fields, like `outDir`, `rootDir`, `baseUrl`, `paths`, `tsBuildInfoFile`, etc, are not set in this config. That's because Typescript resolves paths relative to the configuration file. Thus, you need to configure it manually. [REF](https://github.com/Microsoft/TypeScript/issues/29172)

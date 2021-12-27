@@ -1,13 +1,10 @@
 {
   "name": "@jjangga0214/prettier-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A sharable config package and development environment for prettier",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "main": "src/index.js",
   "files": [
@@ -33,7 +30,7 @@
     "env",
     "prettier"
   ],
-  "dependencies": {
-    "prettier": "^2.5.1"
+  "peerDependencies": {
+    "prettier": ">=2.0.0"
   }
 }

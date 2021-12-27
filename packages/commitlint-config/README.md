@@ -12,6 +12,12 @@ yarn add --dev @jjangga0214/commitlint-config
 pnpm add --save-dev @jjangga0214/commitlint-config
 ```
 
+And also install peerDependencies.
+
+```sh
+npx install-peerdeps --dev @jjangga0214/commitlint-config
+```
+
 ## Note
 
 - This package includes the CLI [`@commitlint/cli`](https://www.npmjs.com/package/@commitlint/cli) and [`commitizen`](https://www.npmjs.com/package/commitizen) as well as config. You do not have to manually install them.

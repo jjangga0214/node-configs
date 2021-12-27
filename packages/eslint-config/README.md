@@ -12,10 +12,15 @@ yarn add --dev @jjangga0214/eslint-config
 pnpm add --save-dev @jjangga0214/eslint-config
 ```
 
+And also install peerDependencies.
+
+```sh
+npx install-peerdeps --dev @jjangga0214/eslint-config
+```
+
 ## Note
 
-- This package includes the CLI `eslint` as well as plugin and config packages (e.g. `eslint-config-*`, `eslint-plugin-*`, etc). You do not need to manually install them.
-- Check out **peerDependencies**.
+- This package includes plugin and config packages (e.g. `eslint-config-*`, `eslint-plugin-*`, etc). You do not need to manually install them.
 
 ## Development
 
