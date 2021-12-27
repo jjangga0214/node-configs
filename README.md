@@ -1,4 +1,4 @@
-# node-config
+# node-configs
 
 Monorepo for sharable config packages and development environment for nodejs and typescript projects.
 
