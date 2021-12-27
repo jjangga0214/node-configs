@@ -1,14 +1,14 @@
 {
   "name": "@jjangga0214/commitlint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src"
+    "index.js"
   ],
   "repository": {
     "type": "git",

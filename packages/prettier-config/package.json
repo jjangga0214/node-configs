@@ -1,14 +1,14 @@
 {
   "name": "@jjangga0214/prettier-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A sharable config package and development environment for prettier",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src"
+    "index.js"
   ],
   "repository": {
     "type": "git",

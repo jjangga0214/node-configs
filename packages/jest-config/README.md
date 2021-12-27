@@ -43,12 +43,12 @@ import { getConfig } from "@jjangga0214/jest-config";
 import { compilerOptions } from "./tsconfig";
 
 export const baseConfig = {
-  ...getConfig(compilerOptions), 
+  ...getConfig(compilerOptions),
   // You can override other fields as well.
   // transform: {
   //   '.(ts|tsx)': 'ts-jest',
   // },
-}
+};
 
 export default {
   ...baseConfig,

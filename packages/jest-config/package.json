@@ -1,14 +1,14 @@
 {
   "name": "@jjangga0214/jest-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A sharable config package and development environment for jest",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src"
+    "index.js"
   ],
   "repository": {
     "type": "git",
