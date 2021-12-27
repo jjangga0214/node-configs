@@ -81,3 +81,9 @@ npx install-peerdeps --pnpm --dev @jjangga0214/tsconfig
   }
 }
 ```
+
+## Usage for import
+
+```js
+import tsconfig from "@jjangga0214/tsconfig";
+```

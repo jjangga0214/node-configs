@@ -1,14 +1,15 @@
 {
   "name": "@jjangga0214/tsconfig",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A sharable config package for Typescript",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "tsconfig.json",
+  "main": "index.js",
   "files": [
-    "tsconfig.json"
+    "tsconfig.json",
+    "index.js"
   ],
   "repository": {
     "type": "git",
