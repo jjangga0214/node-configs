@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=16"
   },
