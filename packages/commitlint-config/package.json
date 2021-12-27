@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/commitlint-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
   "publishConfig": {
@@ -34,12 +34,17 @@
     "commit message"
   ],
   "dependencies": {
-    "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0"
   },
   "peerDependencies": {
-    "@types/node": ">=16.0.0"
+    "@commitlint/cli": ">=15.0.0",
+    "@types/node": ">=16.0.0",
+    "commitizen": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "commitizen": {
+      "optional": true
+    }
   }
 }
