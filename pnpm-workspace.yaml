@@ -1,3 +1,5 @@
 # REF: https://pnpm.io/pnpm-workspace_yaml
 packages:
   - "packages/**"
+
+link-workspace-packages​: "deep"
