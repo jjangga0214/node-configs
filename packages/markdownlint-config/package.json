@@ -1,0 +1,38 @@
+{
+  "name": "@jjangga0214/markdownlint-config",
+  "version": "1.0.0",
+  "description": "A sharable config package and development environment for markdownlint",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.json",
+  "files": [
+    "index.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/markdownlint-config",
+  "author": {
+    "name": "GIL B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "sharable",
+    "env",
+    "markdownlint",
+    "markdownlint-cli",
+    "markdown"
+  ],
+  "peerDependencies": {
+    "markdownlint-cli": ">=0.30.0"
+  }
+}
