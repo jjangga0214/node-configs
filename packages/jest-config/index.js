@@ -1,4 +1,4 @@
-const { pathsToModuleNameMapper } = require("ts-jest/utils")
+const { pathsToModuleNameMapper } = require("ts-jest")
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
