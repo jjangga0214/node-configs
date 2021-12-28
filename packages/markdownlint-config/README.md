@@ -44,7 +44,9 @@ npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 **.markdownlintignore** (Optional):
 
 ```txt
-// specify whatever pattern needed
+.git
+**/node_modules
+# specify any patterns you need
 ```
 
 ## Usage for import
