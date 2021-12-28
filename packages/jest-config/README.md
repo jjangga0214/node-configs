@@ -38,11 +38,11 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 For monorepo, you probably want to configure [`projects`](https://jestjs.io/docs/configuration#projects-arraystring--projectconfig).
 
 ```js
-import { getConfig } from "@jjangga0214/jest-config";
+const { getConfig } = require("@jjangga0214/jest-config");
 // `./tsconfig.json` should not have comment to be imported.
-import { compilerOptions } from "./tsconfig";
+const { compilerOptions } = require("./tsconfig");
 
-export const baseConfig = {
+const baseConfig = {
   ...getConfig(compilerOptions),
   // You can override other fields as well.
   // transform: {
@@ -50,8 +50,9 @@ export const baseConfig = {
   // },
 };
 
-export default {
+module.exports = {
   ...baseConfig,
+  baseConfig,
   projects: [
     "<rootDir>",
     "<rootDir>/packages/*",
@@ -66,24 +67,24 @@ export default {
 **jest.config.js** in each sub projects:
 
 ```js
-import { baseConfig } from "../../jest.config.js";
+const { baseConfig } = require("../../jest.config.js");
 
-export default {
+module.exports = {
   ...baseConfig,
   // You can override other fields as well.
 };
 ```
 
-## Usage for single-project repo
+## Usage for a single-project repo
 
 **jest.config.js**:
 
 ```js
-import { getConfig } from "@jjangga0214/jest-config";
+const { getConfig } = require("@jjangga0214/jest-config");
 // `./tsconfig.json` should not have comment in order to import.
-import { compilerOptions } from "./tsconfig";
+const { compilerOptions } = require("./tsconfig");
 
-export default {
+module.exports = {
   ...getConfig(compilerOptions),
   // You can override other fields as well.
   // transform: {
@@ -92,16 +93,16 @@ export default {
 };
 ```
 
-## Usage for projects not using alias
+## Usage for a project not using alias
 
 If your project is pure javascript or does not need [Typescript paths mappting](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and [jest's `moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
 
 ```js
-import config from "@jjangga0214/jest-config";
+const { config } = require("@jjangga0214/jest-config");
 ```
 
 instead of `getConfig` (function).
 
 ```js
-import { getConfig } from "@jjangga0214/jest-config";
+const { getConfig } = require("@jjangga0214/jest-config");
 ```

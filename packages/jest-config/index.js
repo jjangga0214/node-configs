@@ -199,9 +199,7 @@ const config = {
   // watchman: true,
 };
 
-export default config;
-
-export function getConfig(compilerOptions) {
+function getConfig(compilerOptions) {
   return {
     ...config,
     moduleNameMapper: {
@@ -210,4 +208,9 @@ export function getConfig(compilerOptions) {
       ),
     },
   }
-};
+}
+
+module.exports = {
+  config,
+  getConfig,
+}
