@@ -43,7 +43,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
   "eslintConfig": {
     "extends": "@jjangga0214/eslint-config"
   },
-  "eslintIgnore": ["hello.js", "world.js"]
+  "eslintIgnore": ["dist", "foo", "bar"]
 }
 ```
 
