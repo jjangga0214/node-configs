@@ -25,9 +25,9 @@ npx install-peerdeps --yarn --dev @jjangga0214/commitlint-config
 npx install-peerdeps --pnpm --dev @jjangga0214/commitlint-config
 ```
 
-## Note
+## Development
 
-- This package includes the CLI [`@commitlint/cli`](https://www.npmjs.com/package/@commitlint/cli) and [`commitizen`](https://www.npmjs.com/package/commitizen) as well as config. You do not have to manually install them.
+[REF](https://commitlint.js.org/#/reference-configuration?id=shareable-configuration)
 
 ## Usage
 
