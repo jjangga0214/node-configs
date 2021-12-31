@@ -5,8 +5,8 @@ const common = {
   },
   plugins: ['prettier', 'markdown', 'unicorn'],
   parserOptions: {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    'ecmaVersion': 'latest',
+    'sourceType': 'module'
   },
   extends: [
     'airbnb',
@@ -47,7 +47,8 @@ const ts = {
   plugins: [...common.plugins, '@typescript-eslint'],
   extends: [
     ...common.extends,
-    'airbnb-typescript/base', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
+    // 'airbnb-typescript/base', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
+    'airbnb-typescript', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -147,12 +148,25 @@ module.exports = {
       // Configuration for fenced code blocks goes with the override for
       // the code block's virtual filename, for example:
       parserOptions: {
+        ...common.parserOptions,
         ecmaFeatures: {
           impliedStrict: true,
         },
       },
       rules: {
         ...common.rules,
+        'import/no-unresolved': 'off',
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      ...ts,
+      files: ['**/*.md/*.ts'],
+      // Why `common.parserOptions` instead of `ts.parserOptions`?
+      // It's not to provide `parserOptions.project` property. [REF](https://github.com/eslint/eslint-plugin-markdown/issues/114)
+      parserOptions: common.parserOptions,
+      rules: {
+        ...ts.rules,
         'import/no-unresolved': 'off',
         'import/no-extraneous-dependencies': 'off',
       },
