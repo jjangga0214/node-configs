@@ -18,7 +18,7 @@ const common = {
     'prettier/prettier': 'error',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
-    'unicorn/prefer-modules': 'warn',
+    'unicorn/prefer-module': 'warn',
     'unicorn/prefer-node-protocol': 'warn',
     'no-console': 'off',
     'no-iterator': 'off',
