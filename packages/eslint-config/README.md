@@ -31,7 +31,8 @@ npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 
 ## Development
 
-[REF](https://eslint.org/docs/developer-guide/shareable-configs)
+- The official docs for sharable config: [REF](https://eslint.org/docs/developer-guide/shareable-configs)
+- Once [eslint#3458](https://github.com/eslint/eslint/issues/3458) is resolved, some of peerDependencies (plugins) can be re-organized as a dependencies.
 
 ## Usage
 

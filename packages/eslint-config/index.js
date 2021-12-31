@@ -4,8 +4,13 @@ const common = {
     es6: true,
   },
   plugins: ['prettier', 'markdown', 'unicorn'],
+  parserOptions: {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   extends: [
-    'airbnb-base',
+    'airbnb',
+    "airbnb/hooks",
     'prettier',
     'plugin:markdown/recommended', // REF: https://github.com/eslint/eslint-plugin-markdown/blob/main/lib/index.js
   ],
@@ -35,6 +40,7 @@ const ts = {
   ...common,
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ...common.parserOptions,
     project: './tsconfig.json', // REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
   },
   env: common.env,
