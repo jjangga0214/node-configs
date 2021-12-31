@@ -3,7 +3,7 @@ const common = {
     node: true,
     es6: true,
   },
-  plugins: ['prettier', 'markdown'],
+  plugins: ['prettier', 'markdown', 'unicorn'],
   extends: [
     'airbnb-base',
     'prettier',
@@ -13,6 +13,8 @@ const common = {
     'prettier/prettier': 'error',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
+    'unicorn/prefer-modules': 'warn',
+    'unicorn/prefer-node-protocol': 'warn',
     'no-console': 'off',
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
@@ -54,7 +56,7 @@ const ts = {
   settings: {
     'import/resolver': {
       typescript: {
-        "alwaysTryTypes": true
+        alwaysTryTypes: true
       },
     },
   },
