@@ -53,7 +53,9 @@ const ts = {
   },
   settings: {
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        "alwaysTryTypes": true
+      },
     },
   },
 }
