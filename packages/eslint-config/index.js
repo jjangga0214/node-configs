@@ -9,6 +9,7 @@ const common = {
     'sourceType': 'module'
   },
   extends: [
+    'plugin:unicorn/recommended',
     'airbnb',
     "airbnb/hooks",
     'prettier',
