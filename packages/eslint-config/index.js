@@ -45,7 +45,7 @@ const js = {
 
 const ts = {
   ...common,
-  parser: '@typescript-eslint/parser',
+  parser: require.resolve('@typescript-eslint/parser'),
   parserOptions: {
     ...common.parserOptions,
     project: './tsconfig.json', // REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
