@@ -72,7 +72,7 @@ const ts = {
 }
 
 // Why separating config for test files? => REF: https://github.com/jest-community/eslint-plugin-jest/issues/934
-const test = {
+const jsTest = {
   env: {
     'jest/globals': true,
   },
@@ -94,44 +94,79 @@ const tsTest = {
   ...ts,
   env: {
     ...ts.env,
-    ...test.env,
+    ...jsTest.env,
   },
-  plugins: [...ts.plugins, ...test.plugins],
-  extends: [...ts.extends, ...test.extends],
+  plugins: [...ts.plugins, ...jsTest.plugins],
+  extends: [...ts.extends, ...jsTest.extends],
   rules: {
     ...ts.rules,
-    ...test.rules,
+    ...jsTest.rules,
   },
 }
 
 module.exports = {
-  // ...common,
   root: true,
+  files: ['**/*.js', '**/*.cjs', '**/*.mjs', '**/*.ts'],
   overrides: [
     {
-      ...common,
-      files: ['**/*.js'],
-    },
-    {
-      files: ['**/*.js'],
-      env: {
-        ...js.env,
-        ...test.env,
-      },
-      plugins: [...js.plugins, ...test.plugins],
-      extends: [...js.extends, ...test.extends],
-      rules: {
-        ...js.rules,
-        ...test.rules,
-      },
+      ...js,
+      files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+      overrides: [
+        {
+          files: ['**/*.test.js', '**/*.spec.js', '**/__test__/**/*.spec.js'],
+          env: {
+            ...js.env,
+            ...jsTest.env,
+          },
+          plugins: [...js.plugins, ...jsTest.plugins],
+          extends: [...js.extends, ...jsTest.extends],
+          rules: {
+            ...js.rules,
+            ...jsTest.rules,
+          },
+        },
+        {
+          ...common,
+          // In eslint-plugin-markdown v2, configuration for fenced code blocks is separate from the
+          // containing Markdown file. Each code block has a virtual filename
+          // appended to the Markdown file's path.
+          files: ['**/*.md/*.js'],
+          // Configuration for fenced code blocks goes with the override for
+          // the code block's virtual filename, for example:
+          parserOptions: {
+            ...common.parserOptions,
+            ecmaFeatures: {
+              impliedStrict: true,
+            },
+          },
+          rules: {
+            ...common.rules,
+            'import/no-unresolved': 'off',
+            'import/no-extraneous-dependencies': 'off',
+          },
+        },
+      ]
     },
     {
       ...ts,
       files: ['**/*.ts'],
-    },
-    {
-      ...tsTest,
-      files: ['**/*.test.ts', '**/*.spec.ts'],
+      overrides: [
+        {
+          ...tsTest,
+          files: ['**/*.test.ts', '**/*.spec.ts', '**/__test__/**/*.ts'],
+        },
+        {
+          files: ['**/*.md/*.ts'],
+          // Why `common.parserOptions` instead of `ts.parserOptions`?
+          // It's not to provide `parserOptions.project` property. [REF](https://github.com/eslint/eslint-plugin-markdown/issues/114)
+          parserOptions: common.parserOptions,
+          rules: {
+            ...ts.rules,
+            'import/no-unresolved': 'off',
+            'import/no-extraneous-dependencies': 'off',
+          },
+        },
+      ]
     },
     {
       /*
@@ -140,38 +175,6 @@ module.exports = {
       */
       files: ['**/*.md'],
       processor: 'markdown/markdown',
-    },
-    {
-      ...common,
-      // In eslint-plugin-markdown v2, configuration for fenced code blocks is separate from the
-      // containing Markdown file. Each code block has a virtual filename
-      // appended to the Markdown file's path.
-      files: ['**/*.md/*.js'],
-      // Configuration for fenced code blocks goes with the override for
-      // the code block's virtual filename, for example:
-      parserOptions: {
-        ...common.parserOptions,
-        ecmaFeatures: {
-          impliedStrict: true,
-        },
-      },
-      rules: {
-        ...common.rules,
-        'import/no-unresolved': 'off',
-        'import/no-extraneous-dependencies': 'off',
-      },
-    },
-    {
-      ...ts,
-      files: ['**/*.md/*.ts'],
-      // Why `common.parserOptions` instead of `ts.parserOptions`?
-      // It's not to provide `parserOptions.project` property. [REF](https://github.com/eslint/eslint-plugin-markdown/issues/114)
-      parserOptions: common.parserOptions,
-      rules: {
-        ...ts.rules,
-        'import/no-unresolved': 'off',
-        'import/no-extraneous-dependencies': 'off',
-      },
     },
   ],
 }
