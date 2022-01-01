@@ -6,7 +6,11 @@ const common = {
   plugins: ['prettier', 'markdown', 'unicorn'],
   parserOptions: {
     'ecmaVersion': 'latest',
-    'sourceType': 'module'
+    'sourceType': 'module',
+    'ecmaFeatures': {
+      'jsx': true,
+      'impliedStrict': true,
+    }
   },
   extends: [
     'plugin:unicorn/recommended',
@@ -105,8 +109,6 @@ const tsTest = {
 }
 
 module.exports = {
-  root: true,
-  files: ['**/*.js', '**/*.cjs', '**/*.mjs', '**/*.ts'],
   overrides: [
     {
       ...js,
@@ -135,9 +137,6 @@ module.exports = {
           // the code block's virtual filename, for example:
           parserOptions: {
             ...common.parserOptions,
-            ecmaFeatures: {
-              impliedStrict: true,
-            },
           },
           rules: {
             ...common.rules,
