@@ -37,7 +37,6 @@ const common = {
     '@typescript-eslint/no-shadow': 'off',
   },
   reportUnusedDisableDirectives: true, // REF: https://eslint.org/docs/user-guide/configuring/rules#disabling-inline-comments
-  ignorePatterns: ['**/dist/**',],
 }
 
 const js = {
@@ -111,6 +110,9 @@ const tsTest = {
 }
 
 module.exports = {
+  // `ignorePatterns` should not be in `overrides`
+  // REF: https://eslint.org/docs/user-guide/configuring/ignoring-code#ignorepatterns-in-config-files
+  ignorePatterns: ['**/dist/**',],
   overrides: [
     {
       // eslint-plugin-markdown processes .js and .ts fenced code blockß snippet.
