@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/eslint-config",
-  "version": "2.4.2",
+  "version": "2.5.0",
   "description": "A sharable config package and development environment for eslint",
   "license": "MIT",
   "publishConfig": {

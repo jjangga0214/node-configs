@@ -1,22 +1,22 @@
 const common = {
   env: {
-    node: true,
-    es6: true,
+    'node': true,
+    'es2020': true, // REF: https://eslint.org/docs/user-guide/configuring/language-options#specifying-parser-options
   },
   plugins: ['prettier', 'markdown', 'unicorn'],
   parserOptions: {
-    'ecmaVersion': 'latest',
+    'ecmaVersion': 'latest', // REF: https://eslint.org/docs/user-guide/configuring/language-options#specifying-parser-options
     'sourceType': 'module',
     'ecmaFeatures': {
-      'jsx': true,
+      // 'jsx': true,
       'impliedStrict': true,
     }
   },
   extends: [
     'plugin:unicorn/recommended',
-    'airbnb',
-    "airbnb/hooks",
-    'prettier',
+    require.resolve('eslint-config-airbnb'),
+    require.resolve('eslint-config-airbnb/hooks'),
+    require.resolve('eslint-config-prettier'),
     'plugin:markdown/recommended', // REF: https://github.com/eslint/eslint-plugin-markdown/blob/main/lib/index.js
   ],
   rules: {
@@ -36,6 +36,8 @@ const common = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-shadow': 'off',
   },
+  reportUnusedDisableDirectives: true, // REF: https://eslint.org/docs/user-guide/configuring/rules#disabling-inline-comments
+  ignorePatterns: ['**/dist/**',],
 }
 
 const js = {
@@ -54,12 +56,12 @@ const ts = {
   extends: [
     ...common.extends,
     // 'airbnb-typescript/base', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
-    'airbnb-typescript', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
+    require.resolve('eslint-config-airbnb-typescript'),
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'prettier', // Let prettier have high priority
+    require.resolve('eslint-config-prettier'), // Let prettier have high priority
   ],
   rules: {
     ...common.rules,
@@ -111,6 +113,12 @@ const tsTest = {
 module.exports = {
   overrides: [
     {
+      // eslint-plugin-markdown processes .js and .ts fenced code blockß snippet.
+      // REF: https://github.com/eslint/eslint-plugin-markdown
+      files: ['**/*.md'],
+      processor: 'markdown/markdown',
+    },
+    {
       ...js,
       files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
       overrides: [
@@ -135,9 +143,7 @@ module.exports = {
           files: ['**/*.md/*.js'],
           // Configuration for fenced code blocks goes with the override for
           // the code block's virtual filename, for example:
-          parserOptions: {
-            ...common.parserOptions,
-          },
+          parserOptions: common.parserOptions,
           rules: {
             ...common.rules,
             'import/no-unresolved': 'off',
@@ -166,14 +172,6 @@ module.exports = {
           },
         },
       ]
-    },
-    {
-      /*
-      eslint-plugin-markdown only finds javascript code block snippet.
-      For specific spec, refer to https://github.com/eslint/eslint-plugin-markdown
-      */
-      files: ['**/*.md'],
-      processor: 'markdown/markdown',
     },
   ],
 }
