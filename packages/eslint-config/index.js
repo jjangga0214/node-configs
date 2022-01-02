@@ -13,6 +13,7 @@ const common = {
     }
   },
   extends: [
+    'eslint:recommended',
     'plugin:unicorn/recommended',
     require.resolve('eslint-config-airbnb'),
     require.resolve('eslint-config-airbnb/hooks'),
@@ -138,14 +139,10 @@ module.exports = {
           },
         },
         {
-          ...common,
           // In eslint-plugin-markdown v2, configuration for fenced code blocks is separate from the
           // containing Markdown file. Each code block has a virtual filename
           // appended to the Markdown file's path.
           files: ['**/*.md/*.js'],
-          // Configuration for fenced code blocks goes with the override for
-          // the code block's virtual filename, for example:
-          parserOptions: common.parserOptions,
           rules: {
             ...common.rules,
             'import/no-unresolved': 'off',
@@ -156,7 +153,7 @@ module.exports = {
     },
     {
       ...ts,
-      files: ['**/*.ts'],
+      files: ['**/*.ts',],
       overrides: [
         {
           ...tsTest,
