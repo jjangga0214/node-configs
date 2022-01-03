@@ -205,7 +205,8 @@ function getConfig(compilerOptions) {
     ...config,
     moduleNameMapper: {
       ...pathsToModuleNameMapper(
-        compilerOptions.paths
+        compilerOptions.paths,
+        { prefix: '<rootDir>/' }
       ),
     },
   }
