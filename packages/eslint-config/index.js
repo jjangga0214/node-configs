@@ -69,6 +69,9 @@ const ts = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': [".ts", ".tsx"]
+    },
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true
@@ -144,7 +147,6 @@ module.exports = {
           // appended to the Markdown file's path.
           files: ['**/*.md/*.js'],
           rules: {
-            ...common.rules,
             'import/no-unresolved': 'off',
             'import/no-extraneous-dependencies': 'off',
           },
@@ -165,7 +167,6 @@ module.exports = {
           // It's not to provide `parserOptions.project` property. [REF](https://github.com/eslint/eslint-plugin-markdown/issues/114)
           parserOptions: common.parserOptions,
           rules: {
-            ...ts.rules,
             'import/no-unresolved': 'off',
             'import/no-extraneous-dependencies': 'off',
           },
