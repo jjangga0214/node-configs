@@ -26,7 +26,7 @@ const common = {
     'import/extensions': 'off',
     'unicorn/prefer-module': 'warn',
     'unicorn/prefer-node-protocol': 'off',
-    'unicorn/prevent-abbreviations': 'warn',
+    'unicorn/prevent-abbreviations': 'off',
     'no-console': 'off',
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
