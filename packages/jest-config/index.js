@@ -5,7 +5,7 @@ const { pathsToModuleNameMapper } = require("ts-jest")
  * https://jestjs.io/docs/configuration
  */
 
-const config = {
+const baseConfig = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -200,12 +200,13 @@ const config = {
   // watchman: true,
 };
 
-function getConfig(compilerOptions) {
+function produceConfig({ tsConfig, patchingConfig = baseConfig }) {
   return {
-    ...config,
+    ...baseConfig,
+    ...patchingConfig,
     moduleNameMapper: {
       ...pathsToModuleNameMapper(
-        compilerOptions.paths,
+        tsConfig.compilerOptions.paths,
         { prefix: '<rootDir>/' }
       ),
     },
@@ -213,6 +214,7 @@ function getConfig(compilerOptions) {
 }
 
 module.exports = {
-  config,
-  getConfig,
+  config: baseConfig,
+  produceConfig,
+  pathsToModuleNameMapper,
 }
