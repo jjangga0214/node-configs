@@ -55,7 +55,7 @@ const ts = {
   extends: [
     ...common.extends,
     // 'airbnb-typescript/base', // "base" does not include tsx rules. REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
-    require.resolve('eslint-config-airbnb-typescript'),
+    require.resolve('eslint-config-airbnb-typescript/base'),
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
