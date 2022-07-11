@@ -15,8 +15,7 @@ const common = {
   extends: [
     'eslint:recommended',
     'plugin:unicorn/recommended',
-    require.resolve('eslint-config-airbnb'),
-    require.resolve('eslint-config-airbnb/hooks'),
+    require.resolve('eslint-config-airbnb-base'),
     require.resolve('eslint-config-prettier'),
     'plugin:markdown/recommended', // REF: https://github.com/eslint/eslint-plugin-markdown/blob/main/lib/index.js
   ],
