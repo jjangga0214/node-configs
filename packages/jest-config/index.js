@@ -203,13 +203,13 @@ const baseConfig = {
 function produceConfig({ tsConfig, patchingConfig = baseConfig }) {
   return {
     ...baseConfig,
-    ...patchingConfig,
     moduleNameMapper: {
       ...pathsToModuleNameMapper(
         tsConfig.compilerOptions.paths,
         { prefix: '<rootDir>/' }
       ),
     },
+    ...patchingConfig,
   }
 }
 
