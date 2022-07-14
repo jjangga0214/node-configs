@@ -71,7 +71,7 @@ const ts = {
       {
         "case": "kebabCase",
         "ignore": [
-          "^*\\.md$",
+          "*\\.md$",
         ]
       }
     ]
