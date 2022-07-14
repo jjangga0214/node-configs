@@ -26,6 +26,18 @@ const common = {
     'unicorn/prefer-module': 'warn',
     'unicorn/prefer-node-protocol': 'off',
     'unicorn/prevent-abbreviations': 'off',
+    'unicorn/filename-case': [ // REF: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
+      'warn',
+      {
+        "case": "kebabCase",
+        "ignore": [
+          /.+\.md$/,
+          /.+\.txt$/,
+          /.+\.env$/,
+          /.+\.yaml$/,
+        ]
+      }
+    ],
     'no-console': 'off',
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
@@ -66,15 +78,6 @@ const ts = {
     ...common.rules,
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    "unicorn/filename-case": [ // REF: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
-      "error",
-      {
-        "case": "kebabCase",
-        "ignore": [
-          "\\.md$",
-        ]
-      }
-    ]
   },
   settings: {
     'import/parsers': {
