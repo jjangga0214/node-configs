@@ -66,6 +66,15 @@ const ts = {
     ...common.rules,
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    "unicorn/filename-case": [ // REF: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
+      "error",
+      {
+        "case": "kebabCase",
+        "ignore": [
+          "^*\\.md$",
+        ]
+      }
+    ]
   },
   settings: {
     'import/parsers': {
