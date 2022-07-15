@@ -31,15 +31,32 @@
     "jest"
   ],
   "dependencies": {
-    "@swc/jest": "^0.2.11",
-    "@types/jest": "^27.0.3",
-    "jest-junit": "^13.0.0",
     "ts-jest": "^27.1.0"
   },
   "peerDependencies": {
-    "typescript": "^4.0.0",
+    "@types/jest": "^27.0.3",
     "@swc/core": ">=1.0.0",
+    "@swc/jest": "^0.2.11",
+    "ts-jest": "^27.1.0",
+    "typescript": "^4.0.0",
     "jest": ">=27.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "@types/jest": {
+      "optional": true
+    },
+    "@swc/core": {
+      "optional": true
+    },
+    "@swc/jest": {
+      "optional": true
+    },
+    "ts-jest": {
+      "optional": true
+    }
   },
   "scripts": {
     "test": "jest"
