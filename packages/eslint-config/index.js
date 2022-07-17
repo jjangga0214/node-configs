@@ -107,6 +107,7 @@ const jsTest = {
     'jest/expect-expect': 'off',
     'jest/prefer-expect-assertions': 'off',
     'jest/no-test-return-statement': 'off',
+    'jest/consistent-test-it': 'off',
   },
 }
 
