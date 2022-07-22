@@ -102,7 +102,7 @@ const baseConfig = {
   // projects: undefined,
 
   // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
+  reporters: ['default', 'github-actions'],
 
   // Automatically reset mock state before every test
   // resetMocks: false,
