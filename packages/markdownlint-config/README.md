@@ -12,7 +12,13 @@ yarn add --dev @jjangga0214/markdownlint-config
 pnpm add --save-dev @jjangga0214/markdownlint-config
 ```
 
-And you should also install peerDependencies manually.
+And you should also install `peerDependencies` manually.
+Checkout package.json or `npm info`.
+
+```sh
+# This does not install them all. This just show them on terminal.
+npm info "@jjangga0214/markdownlint-config@latest" peerDependencies
+```
 
 Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peerdeps/documentation).
 

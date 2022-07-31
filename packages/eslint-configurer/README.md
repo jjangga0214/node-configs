@@ -16,18 +16,37 @@ yarn add --dev @jjangga0214/eslint-configurer
 pnpm add --save-dev @jjangga0214/eslint-configurer
 ```
 
-And you should also install peerDependencies manually.
+And you should also install `peerDependencies` manually.
+Checkout package.json or `npm info`.
+
+```sh
+# This does not install them all. This just show them on terminal.
+npm info "@jjangga0214/eslint-configer@latest" peerDependencies
+```
+
+Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peerdeps/documentation).
+
+```sh
+# For npm
+npx install-peerdeps --dev @jjangga0214/eslint-config
+# For yarn
+npx install-peerdeps --yarn --dev @jjangga0214/eslint-config
+# For pnpm
+npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
+```
+
+**But before the installtion, please read this docs first.**
 
 ## Optional `peerDependencies`
 
 As you can see from `peerDependenciesMeta` in package.json, some `peerDependencies` are marked as optional. For `peerDependencies` NOT specified as optional, you must install them.
 
-### When you ONLY use javascript (js)
+### When you ONLY use javascript (.js, .mjs, .cjs)
 
 You don't have to install optional `peerDependencies` at all.
 You still have to install non-optional `peerDependencies` (e.g. `eslint`, `prettier`, `eslint-plugin-unicorn`).
 
-### When you use typescript (ts, tsx)
+### When you use typescript (.ts, .tsx)
 
 If you use typescript, you should install these optional `peerDependencies`.
 (So these are in fact NOT optional if you use typescript.)
@@ -37,7 +56,7 @@ If you use typescript, you should install these optional `peerDependencies`.
 - `eslint-plugin-import` (This is needed both for typescript and react)
 - `typescript`
 
-### When you use react (jsx, tsx)
+### When you use react (.jsx, .tsx)
 
 If you use react, you should install these optional `peerDependencies`.
 (So these are in fact NOT optional if you use react.)

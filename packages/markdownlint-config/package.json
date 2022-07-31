@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/markdownlint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A sharable config package for markdownlint",
   "license": "MIT",
   "publishConfig": {

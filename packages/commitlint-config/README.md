@@ -1,6 +1,6 @@
 # `@jjangga0214/commitlint-config`
 
-A sharable config package and development environment for [commitlint](https://commitlint.js.org/#/).
+A [Sharcable Config](https://commitlint.js.org/#/reference-configuration?id=shareable-configuration) package for [commitlint](https://commitlint.js.org/#/).
 
 ## Installation
 
@@ -12,7 +12,13 @@ yarn add --dev @jjangga0214/commitlint-config
 pnpm add --save-dev @jjangga0214/commitlint-config
 ```
 
-And you should also install peerDependencies manually.
+And you should also install `peerDependencies` manually.
+Checkout package.json or `npm info`.
+
+```sh
+# This does not install them all. This just show them on terminal.
+npm info "@jjangga0214/commitlint-config@latest" peerDependencies
+```
 
 Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peerdeps/documentation).
 
@@ -27,7 +33,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/commitlint-config
 
 ## Development
 
-[REF](https://commitlint.js.org/#/reference-configuration?id=shareable-configuration)
+Check out the official docs for [Sharable Config](https://commitlint.js.org/#/reference-configuration?id=shareable-configuration)
 
 ## Usage
 
