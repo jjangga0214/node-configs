@@ -1,6 +1,6 @@
 # `@jjangga0214/markdownlint-config`
 
-A sharable config package and development environment for [`markdownlint-cli`](https://github.com/igorshubovych/markdownlint-cli).
+A sharable config package for [`markdownlint-cli`](https://github.com/igorshubovych/markdownlint-cli).
 
 ## Installation
 
@@ -27,7 +27,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 
 ## Note
 
-- There's [`markdownlint-cli`](https://www.npmjs.com/package/markdownlint-cli) and [`markdownlint-cli2`](https://www.npmjs.com/package/markdownlint-cli2). This package works with the former. This may or may not work with the latter.
+- There're [`markdownlint-cli`](https://www.npmjs.com/package/markdownlint-cli) and [`markdownlint-cli2`](https://www.npmjs.com/package/markdownlint-cli2). This package works with the former. This may or may not work with the latter.
 - There's [`igorshubovych/markdownlint-cli#97`](https://github.com/igorshubovych/markdownlint-cli/issues/97) for extending sharable config, and/or autodiscovery of .js config file. Once the discussion is settled, the usage below might ought to be edited.
 
 ## Usage
