@@ -1,7 +1,7 @@
 {
   "name": "@jjangga0214/prettier-config",
-  "version": "2.0.1",
-  "description": "A sharable config package and development environment for prettier",
+  "version": "2.0.2",
+  "description": "A sharable config package for prettier",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

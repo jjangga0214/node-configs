@@ -25,14 +25,6 @@ npx install-peerdeps --yarn --dev @jjangga0214/prettier-config
 npx install-peerdeps --pnpm --dev @jjangga0214/prettier-config
 ```
 
-## Note
-
-- This package includes the CLI `prettier` as well as config. You do not have to manually install it.
-
-## Development
-
-- [REF](https://prettier.io/docs/en/configuration.html#sharing-configurations)
-
 ## Usage
 
 **package.json**:
@@ -55,3 +47,7 @@ module.exports = {
   // You can override some fileds
 };
 ```
+
+## Development
+
+- [REF](https://prettier.io/docs/en/configuration.html#sharing-configurations)
