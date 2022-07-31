@@ -200,16 +200,15 @@ const baseConfig = {
   // watchman: true,
 };
 
-function produceConfig({ tsConfig, patchingConfig = baseConfig }) {
+function produceConfig({ tsConfig: { compilerOptions: { paths } } }) {
   return {
     ...baseConfig,
     moduleNameMapper: {
       ...pathsToModuleNameMapper(
-        tsConfig.compilerOptions.paths,
+        paths,
         { prefix: '<rootDir>/' }
       ),
     },
-    ...patchingConfig,
   }
 }
 
