@@ -1,7 +1,7 @@
 {
   "name": "@jjangga0214/eslint-config",
-  "version": "3.1.0",
-  "description": "A sharable config package and development environment for eslint",
+  "version": "3.1.1",
+  "description": "A sharable eslint config for javascript, typescript, and jest",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -29,13 +29,12 @@
     "sharable",
     "env",
     "eslint",
-    "eslintconfig"
+    "eslintconfig",
+    "jest",
+    "typescript"
   ],
   "dependencies": {
-    "@typescript-eslint/parser": "^5.8.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^16.1.0",
-    "eslint-config-prettier": "^8.3.0"
+    "@jjangga0214/eslint-configurer": "workspace:*"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.8.1",

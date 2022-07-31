@@ -1,6 +1,6 @@
 # `@jjangga0214/eslint-config`
 
-A sharable config package and development environment for [eslint](https://eslint.org).
+An ESlint [`Sharable Config`](https://eslint.org/docs/latest/developer-guide/shareable-configs) for javascript, typescript, react, jest.
 
 ## Installation
 
@@ -25,22 +25,13 @@ npx install-peerdeps --yarn --dev @jjangga0214/eslint-config
 npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 ```
 
-## Note
-
-- This package includes plugin and config packages (e.g. `eslint-config-*`, `eslint-plugin-*`, etc). You do not need to manually install them.
-
-## Development
-
-- The official docs for sharable config: [REF](https://eslint.org/docs/developer-guide/shareable-configs)
-- Once [eslint#3458](https://github.com/eslint/eslint/issues/3458) is resolved, some of `peerDependencies` (plugins) can be re-organized as a `dependencies`. Currently, only `eslint-config-*` are `dependencies`, so `require.resolve` is used.
-
 ## Usage
 
 **package.json**:
 
 ```jsonc
 {
-  "name": "your-cool-library",
+  "name": "your-cool-project",
   "eslintConfig": {
     "extends": "@jjangga0214/eslint-config"
   },
@@ -57,3 +48,8 @@ module.exports = {
   extends: "@jjangga0214/eslint-config",
 };
 ```
+
+## Development
+
+- The [official docs](https://eslint.org/docs/developer-guide/shareable-configs) for eslint sharable config
+- Once [eslint#3458](https://github.com/eslint/eslint/issues/3458) is resolved, some of `peerDependencies` (plugins) can be re-organized as a `dependencies` of `@jjangga0214/eslint-configurer`, which means current `peerDependencies` can become transitive dependencies (`dependencies` of `dependencies`).
