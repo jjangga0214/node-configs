@@ -18,33 +18,51 @@ pnpm add --save-dev @jjangga0214/eslint-configurer
 
 And you should also install peerDependencies manually.
 
-### Note
-
-This package includes config packages (e.g. `eslint-config-*`). You do not need to manually install them. They are not `peerDependencies`.
-
-### Optional `peerDependencies`
+## Optional `peerDependencies`
 
 As you can see from `peerDependenciesMeta` in package.json, some `peerDependencies` are marked as optional. For `peerDependencies` NOT specified as optional, you must install them.
 
-#### When you use typescript
+### When you ONLY use javascript (js)
+
+You don't have to install optional `peerDependencies` at all.
+You still have to install non-optional `peerDependencies` (e.g. `eslint`, `prettier`, `eslint-plugin-unicorn`).
+
+### When you use typescript (ts, tsx)
 
 If you use typescript, you should install these optional `peerDependencies`.
-(So these become NOT optional if you use typescript.)
+(So these are in fact NOT optional if you use typescript.)
 
 - `@typescript-eslint/eslint-plugin`
 - `eslint-import-resolver-typescript`
 - `eslint-plugin-import` (This is needed both for typescript and react)
 - `typescript`
 
-#### When you use react
+### When you use react (jsx, tsx)
 
 If you use react, you should install these optional `peerDependencies`.
-(So these become NOT optional if you use react.)
+(So these are in fact NOT optional if you use react.)
 
 - `eslint-plugin-import` (This is needed both for typescript and react)
 - `eslint-plugin-jsx-a11y`
 - `eslint-plugin-react`
 - `eslint-plugin-react-hooks`
+
+### Why are these 3 packages listed on both `peerDependencies` and `dependencies` simultaneously?
+
+- `eslint-plugin-jsx-a11y`
+- `eslint-plugin-react`
+- `eslint-plugin-react-hooks`
+
+Theses packages above are listed on both `dependencies` and `peerDependencies`.
+One of this pacakges dependency, `eslint-config-airbnb`, which contains react rules along with pure javascript rules, **requires** them as `peerDependencies`.
+Though it's possible letting the final consumer install them as `dependencies`, it's avoided intentionally by listing them in this package's `dependencies`.
+
+This is because I don't want to force the final users to install those plugins even when their projects don't include react code.
+
+Therefore I let those plugins become **optional** `peerDependencies` to the final consumer by specifying them as `dependencies` in this package's package.json.
+
+For users who use react, they have to install the plugins anyway (So it's in fact not optional).
+For users who don't use react, they don't have to install the plugins.
 
 ## Usage
 
