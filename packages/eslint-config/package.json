@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/eslint-config",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "A sharable eslint config for javascript, typescript, and jest",
   "license": "MIT",
   "publishConfig": {
@@ -30,8 +30,10 @@
     "env",
     "eslint",
     "eslintconfig",
+    "sharable config",
+    "typescript",
     "jest",
-    "typescript"
+    "react"
   ],
   "dependencies": {
     "@jjangga0214/eslint-configurer": "workspace:*"
