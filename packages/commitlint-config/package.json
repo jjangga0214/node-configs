@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/commitlint-config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
   "publishConfig": {
@@ -34,7 +34,7 @@
     "commit message"
   ],
   "dependencies": {
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-conventional": "^17.0.3",
     "cz-conventional-changelog": "^3.3.0"
   },
   "peerDependencies": {
