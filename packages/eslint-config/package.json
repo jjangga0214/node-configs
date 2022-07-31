@@ -39,8 +39,8 @@
     "@jjangga0214/eslint-configurer": "workspace:*"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "eslint": ">=8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.13.1",
+    "eslint": ">=8.2.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.3.3",
