@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/jest-config",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "A sharable config package and development environment for jest",
   "license": "MIT",
   "publishConfig": {
@@ -31,15 +31,15 @@
     "jest"
   ],
   "dependencies": {
-    "ts-jest": "^27.1.0"
+    "ts-jest": "^28.0.7"
   },
   "peerDependencies": {
-    "@types/jest": "^27.0.3",
     "@swc/core": ">=1.0.0",
     "@swc/jest": "^0.2.11",
+    "@types/jest": "^27.0.3",
+    "jest": ">=27.0.0",
     "ts-jest": "^27.1.0",
-    "typescript": "^4.0.0",
-    "jest": ">=27.0.0"
+    "typescript": "^4.0.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
