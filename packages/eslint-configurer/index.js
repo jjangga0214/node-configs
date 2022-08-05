@@ -22,6 +22,7 @@ function javascript({ react = false } = {}) {
         react ? [
           require.resolve('eslint-config-airbnb'),
           require.resolve('eslint-config-airbnb/hooks'),
+          'plugin:react/jsx-runtime',
         ] :
           [require.resolve('eslint-config-airbnb-base'),]
 
