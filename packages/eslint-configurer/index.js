@@ -161,7 +161,7 @@ function configure({ react = false, typescript = false, jest = false } = {}) {
         ]
       },
       ...(typescript ? [{
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['**/*.{ts,tsx}'],
         ..._typescript({ react }),
         overrides: [
           ...(jest ? [{
@@ -180,6 +180,20 @@ function configure({ react = false, typescript = false, jest = false } = {}) {
           },
         ]
       }] : []),
+      {
+        files: ['**/*.{jsx,tsx}'],
+        rules: {
+          'unicorn/filename-case': [ // REF: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
+            'warn',
+            {
+              "cases": {
+                "kebabCase": true,
+                "pascalCase": true
+              }
+            }
+          ],
+        }
+      }
     ],
   }
 }
