@@ -84,7 +84,9 @@ const baseConfig = {
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '^(\\.{1,2}/.+)\\.js$': '$1', // REF: https://stackoverflow.com/questions/66154478/jest-ts-jest-typescript-with-es-modules-import-cannot-find-module
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -181,6 +183,9 @@ const baseConfig = {
     // '.(ts|tsx)': 'ts-jest',
   },
 
+  // Jest will run .mjs and .js files with nearest package.json's type field set to module as ECMAScript Modules. If you have any other files that should run with native ESM, you need to specify their file extension here.
+  extensionsToTreatAsEsm: ['.ts'],
+
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
   //   "/node_modules/",
@@ -204,6 +209,7 @@ function produceConfig({ tsConfig: { compilerOptions: { paths } } }) {
   return {
     ...baseConfig,
     moduleNameMapper: {
+      ...baseConfig.moduleNameMapper,
       ...pathsToModuleNameMapper(
         paths,
         { prefix: '<rootDir>/' }

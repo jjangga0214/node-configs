@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/jest-config",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "description": "A sharable config package and development environment for jest",
   "license": "MIT",
   "publishConfig": {
