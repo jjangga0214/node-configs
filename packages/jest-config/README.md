@@ -33,7 +33,9 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 
 ## Note
 
-- For [`transform`](https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object), [`@swc/jest`](https://www.npmjs.com/package/@swc/jest) is preconfigured. But as of writing, swcs might have a few issues. You can override it, by [`ts-jest`](https://www.npmjs.com/package/ts-jest), [`esbuild`](https://esbuild.github.io/), `babel`, or `tsc` for example.
+- For [`transform`](https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object), [`@swc/jest`](https://www.npmjs.com/package/@swc/jest) is preconfigured. You can override it, by [`ts-jest`](https://www.npmjs.com/package/ts-jest), [`esbuild`](https://esbuild.github.io/), `babel`, or `tsc` for example.
+- [`extensionsToTreatAsEsm`](https://jestjs.io/docs/next/configuration#extensionstotreatasesm-arraystring) is preconfigured. If your project is not ESM-based typescript, override it.
+- [`moduleNameMapper`](https://jestjs.io/docs/next/configuration#modulenamemapper-objectstring-string--arraystring) is preconfigured, even when you're not using `produceConfig`. If your project is not ESM-based typescript, override it.
 
 ## Usage
 
@@ -42,13 +44,13 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 If your project is pure javascript or does not need [Typescript paths mappting](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and [jest's `moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
 
 ```js
-const { config } = require("@jjangga0214/jest-config");
+import { config } from '@jjangga0214/jest-config'
 ```
 
 instead of `produceConfig` (function).
 
 ```js
-const { produceConfig } = require("@jjangga0214/jest-config");
+import { produceConfig } from '@jjangga0214/jest-config'
 ```
 
 ### For a single-project repo
@@ -56,11 +58,14 @@ const { produceConfig } = require("@jjangga0214/jest-config");
 **jest.config.js**:
 
 ```js
-const { produceConfig } = require("@jjangga0214/jest-config");
-// `./tsconfig.json` should not have comment in order to import.
-const tsConfig = require("./tsconfig");
+import { produceConfig } from '@jjangga0214/jest-config'
+import { createRequire } from 'module'
 
-module.exports = {
+const require = createRequire(import.meta.url)
+// `./tsconfig.json` should not have comment in order to import.
+const tsConfig = require('./tsconfig.json')
+
+export default {
   ...produceConfig({ tsConfig }),
   // You can override other fields as well.
   // transform: {
@@ -77,8 +82,11 @@ For monorepo, you probably want to configure [`projects`](https://jestjs.io/docs
 
 ```js
 const { produceConfig } = require("@jjangga0214/jest-config");
-// `./tsconfig.json` should not contain comment to be imported.
-const tsConfig = require("./tsconfig");
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
+// `./tsconfig.json` should not have comment in order to import.
+const tsConfig = require('./tsconfig.json')
 
 const baseConfig = {
   ...produceConfig({ tsConfig }),
@@ -88,16 +96,16 @@ const baseConfig = {
   // },
 };
 
-module.exports = {
+export default {
   baseConfig,
   ...baseConfig,
   projects: [
-    "<rootDir>",
-    "<rootDir>/packages/*",
-    "<rootDir>/backends/*",
-    "<rootDir>/frontends/*",
-    "<rootDir>/libs/*",
-    "<rootDir>/workflows/*",
+    '<rootDir>',
+    '<rootDir>/packages/*',
+    '<rootDir>/backends/*',
+    '<rootDir>/frontends/*',
+    '<rootDir>/libs/*',
+    '<rootDir>/workflows/*',
   ],
 };
 ```
@@ -105,12 +113,12 @@ module.exports = {
 **jest.config.js** in each sub projects:
 
 ```js
-const { baseConfig } = require("../../jest.config.js");
+import { baseConfig } from '../../jest.config.js'
 
-module.exports = {
-  ...baseConfig,
-  // You can override other fields as well.
-};
+export default {
+ ...baseConfig,
+  // You can override other fields as well. 
+}
 ```
 
 **However**, for monorepo with certain situation, it is OK that you don't depend on [`projects`](https://jestjs.io/docs/configuration#projects-arraystring--projectconfig). You may be able to treat your monorepo like a single project repo. JEST may still work well.
