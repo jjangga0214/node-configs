@@ -209,11 +209,11 @@ function produceConfig({ tsConfig: { compilerOptions: { paths } } }) {
   return {
     ...baseConfig,
     moduleNameMapper: {
-      ...baseConfig.moduleNameMapper,
       ...pathsToModuleNameMapper(
         paths,
         { prefix: '<rootDir>/' }
       ),
+      ...baseConfig.moduleNameMapper, // The order matters
     },
   }
 }
