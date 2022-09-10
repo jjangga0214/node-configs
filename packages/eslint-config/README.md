@@ -90,6 +90,30 @@ module.exports = {
 };
 ```
 
+### If you have tsconfig named/located unconventional
+
+By default, `./packages/*/tsconfig.json` or (if not found) `./tsconfig.json` is used. If your tsconfig file is named/located differently (e.g. `tsconfig.eslint.json`), then you might want to override `parserOptions.project` AND `settings['import/resolver'].typescript.project` from typescript config.
+
+```js
+parserOptions: {  
+  project: ['./packages/*/tsconfig.json', './tsconfig.json',], // Override it
+},
+settings: {
+  'import/parsers': {
+    '@typescript-eslint/parser': [".ts", ".tsx"]
+  },
+  'import/resolver': {
+    typescript: {
+      alwaysTryTypes: true,
+      project: [ // Override this as well
+        'packages/*/tsconfig.json',
+        'tsconfig.json',
+      ]
+    },
+  },
+}
+```
+
 ## Development
 
 - The [official docs](https://eslint.org/docs/developer-guide/shareable-configs) for eslint sharable config

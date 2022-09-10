@@ -67,7 +67,8 @@ function typescript({ react = false } = {}) {
   return merge(javascript({ react }), {
     parser: require.resolve('@typescript-eslint/parser'),
     parserOptions: {
-      project: './tsconfig.json', // REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
+      // REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
+      project: ['./packages/*/tsconfig.json', './tsconfig.json',],
     },
     plugins: ['@typescript-eslint'],
     extends: [
@@ -91,7 +92,11 @@ function typescript({ react = false } = {}) {
       },
       'import/resolver': {
         typescript: {
-          alwaysTryTypes: true
+          alwaysTryTypes: true,
+          project: [
+            'packages/*/tsconfig.json',
+            'tsconfig.json',
+          ]
         },
       },
     },

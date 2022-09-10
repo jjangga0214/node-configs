@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/eslint-configurer",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A package to easily configure/override eslint config",
   "license": "MIT",
   "publishConfig": {
