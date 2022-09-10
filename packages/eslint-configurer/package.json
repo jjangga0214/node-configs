@@ -83,8 +83,5 @@
     "typescript": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "eslint": "^8.20.0"
   }
 }

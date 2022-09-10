@@ -125,7 +125,7 @@ settings: {
 
 ### `Sharable Config`
 
-You should understand what eslint's concept of sharable config. 
+You should understand what eslint's concept of sharable config.
 The official docs is [here](https://eslint.org/docs/developer-guide/shareable-configs).
 
 ### Plugins are `peerDependencies`, while Sharable Configs are `dependencies`
