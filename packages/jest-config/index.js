@@ -183,9 +183,15 @@ const baseConfig = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.(t|j)sx?$': ['@swc/jest'],
+    '^.+\\.(m|c)?(t|j)sx?$': ['@swc/jest'],
     // '.(ts|tsx)': 'ts-jest',
   },
+  // transform: { '^.+\\.(m|c)?(t|j)sx?$': ['esbuild-jest'] },
+  // transform: {
+  //   '^.+\\.(m|c)?(t|j)sx?$': ['ts-jest', {
+  //     useESM: true,
+  //   },],
+  // },
 
   // Jest will run .mjs and .js files with nearest package.json's type field set to module as ECMAScript Modules. If you have any other files that should run with native ESM, you need to specify their file extension here.
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
