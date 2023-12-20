@@ -31,15 +31,15 @@ npx install-peerdeps --yarn --dev @jjangga0214/jest-config
 npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 ```
 
-## Note
+## Notes
 
 - For [`transform`](https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object), [`@swc/jest`](https://www.npmjs.com/package/@swc/jest) is preconfigured. You can override it, by [`ts-jest`](https://www.npmjs.com/package/ts-jest), [`esbuild`](https://esbuild.github.io/), `babel`, or `tsc` for example.
-- [`extensionsToTreatAsEsm`](https://jestjs.io/docs/next/configuration#extensionstotreatasesm-arraystring) is preconfigured. If your project is not ESM-based typescript, override it.
-- [`moduleNameMapper`](https://jestjs.io/docs/next/configuration#modulenamemapper-objectstring-string--arraystring) is preconfigured, even when you're not using `produceConfig`. If your project is not ESM-based typescript, override it.
+- [`extensionsToTreatAsEsm`](https://jestjs.io/docs/next/configuration#extensionstotreatasesm-arraystring) is preconfigured. If your project is not ESM typescript, override it.
+- [`moduleNameMapper`](https://jestjs.io/docs/next/configuration#modulenamemapper-objectstring-string--arraystring) is preconfigured, even when you're not using `produceConfig()`. If your project is not ESM typescript, override it.
 
 ## Usage
 
-### For a project not using alias
+### For a project not using an alias
 
 If your project is pure javascript or does not need [Typescript paths mappting](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and [jest's `moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
 

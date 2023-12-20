@@ -1,7 +1,16 @@
-const { configure } = require('@jjangga0214/eslint-configurer');
+const javascript = require('./javascript')
+const typescript = require('./typescript')
+const jest = require('./jest')
+const react = require('./react')
+const { ignores } = require('./helpers')
 
-module.exports = configure({
-  react: true,
-  typescript: true,
-  jest: true,
-})
+// REF: https://github.com/eslint/eslint/discussions/16291
+module.exports = [
+  {
+    ignores,
+  },
+  ...javascript,
+  ...jest,
+  ...typescript,
+  ...react,
+]

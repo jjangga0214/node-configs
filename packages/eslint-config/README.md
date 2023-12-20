@@ -1,9 +1,8 @@
 # `@jjangga0214/eslint-config`
 
-An ESlint [`Sharable Config`](https://eslint.org/docs/latest/developer-guide/shareable-configs) for javascript, typescript, react, jest.
+An ESlint [`Sharable Config`](https://eslint.org/docs/latest/developer-guide/shareable-configs) for javascript, typescript, react, and jest.
 
-This package assumes (non-optional) you use typescript and jest.
-However, This package does not assume (optional) you always use react, though this sharable config includes eslint rules for react.
+This package is for ESLint's new [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-1/).
 
 ## Installation
 
@@ -15,8 +14,7 @@ yarn add --dev @jjangga0214/eslint-config
 pnpm add --save-dev @jjangga0214/eslint-config
 ```
 
-And you should also install `peerDependencies` manually.
-Checkout package.json or `npm info`.
+And make sure `peerDependencies` is satisfied.
 
 ```sh
 # This does not install them all. This just show them on terminal.
@@ -34,87 +32,86 @@ npx install-peerdeps --yarn --dev @jjangga0214/eslint-config
 npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 ```
 
-**But before the installtion, please read this docs first.**
+## Entrypoints
 
-### Typescript-related non-optional `peerDependencies`
-
-- `@typescript-eslint/eslint-plugin`
-- `eslint-import-resolver-typescript`
-- `eslint-plugin-import` (This is needed both for typescript and react)
-- `typescript`
-
-This Sharable Config package assumes you to use typescript.
-The `peerDependencies` above are for typescript and non-optional.
-You must install them.
-As long as you install them, it's still possible for you to use this shareable config with only .js or .jsx.
-
-### Jest-related non-optional `peerDependencies`
-
-- `eslint-plugin-jest`
-
-This Sharable Config package assumes you to use jest.
-The `peerDependencies` above is for jest and non-optional.
-Even when you use another test runner (not jest), a problem might occur as eslint rules for jest would still be applied.
-For those cases, this Sharable Config is not suitable.
-
-### React-related **optional** `peerDependencies`
-
-If you use react, you should install these `peerDependencies`.
-If you do not use react, you don't have to install these.
-
-- `eslint-plugin-jsx-a11y`
-- `eslint-plugin-react`
-- `eslint-plugin-react-hooks`
+- [`@jjangga0214/eslint-config/javascript`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/javascript.js): Sharable config for javascript
+- [`@jjangga0214/eslint-config/typescript`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/typescript.js): Sharable config for typescript
+- [`@jjangga0214/eslint-config/jest`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/jest.js): Sharable config for jest
+- [`@jjangga0214/eslint-config/react`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/react.js): Sharable config for react
+- [`@jjangga0214/eslint-config/commonjs`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/commonjs.js): Sharable config for CJS.
+- [`@jjangga0214/eslint-config/helpers`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/helpers.js): Utility helpers
 
 ## Usage
 
-**package.json**:
-
-```jsonc
-{
-  "name": "your-cool-project",
-  "eslintConfig": {
-    "extends": "@jjangga0214/eslint-config"
-  },
-  "eslintIgnore": ["dist", "foo", "bar"]
-}
-```
-
-Or you can import it into javascript config file.
-
-**.eslintrc.js**:
+**eslint.config.js**:
 
 ```js
-module.exports = {
-  extends: "@jjangga0214/eslint-config",
-};
+import { ignores } from '@jjangga0214/eslint-config/helpers'
+import javascript from '@jjangga0214/eslint-config/javascript'
+import typescript from '@jjangga0214/eslint-config/typescript'
+import jest from '@jjangga0214/eslint-config/jest'
+import react from '@jjangga0214/eslint-config/react'
+
+export default [
+  {
+    ignores,
+  },
+  ...javascript, // You must include this even for typescript.
+  ...jest, // Include this only if you use jest
+  ...typescript, // Include this only if you use typescript
+  ...react, // Include this only if you use react
+]
 ```
 
-### If you have tsconfig named/located unconventional
-
-By default, `./packages/*/tsconfig.json` or (if not found) `./tsconfig.json` is used. If your tsconfig file is named/located differently (e.g. `tsconfig.eslint.json`), then you might want to override `parserOptions.project` AND `settings['import/resolver'].typescript.project` from typescript config.
+ESM is configured by default.
+For CJS, use `@jjangga0214/eslint-config/commonjs`
 
 ```js
-parserOptions: {  
-  project: ['./packages/*/tsconfig.json', './tsconfig.json',], // Override it
-},
-settings: {
-  'import/parsers': {
-    '@typescript-eslint/parser': [".ts", ".tsx"]
+// Others are omitted for brevity
+import commonjs from '@jjangga0214/eslint-config/commonjs'
+
+export default [
+  {
+    ignores,
   },
-  'import/resolver': {
-    typescript: {
-      alwaysTryTypes: true,
-      project: [ // Override this as well
-        'packages/*/tsconfig.json',
-        'tsconfig.json',
-      ]
+  ...javascript, 
+  ...jest, 
+  ...typescript,
+  ...react,
+  ...commonjs,
+]
+```
+
+## tsconfig.json and `@jjangga0214/eslint-config/typescript`
+
+By default, `./packages/*/tsconfig.json` and/or (if not found) `./tsconfig.json` are targets to search. 
+If your tsconfig file is named/located differently (e.g. `tsconfig.eslint.json`), 
+override
+`languageOptions.parserOptions.project`
+AND
+`settings['import/resolver'].typescript.project`
+ from typescript config.
+
+```js
+{ 
+  // ...
+  languageOptions:{
+    // ...
+    parserOptions: {
+      project: ['./packages/*/tsconfig.json', './tsconfig.json',], // <-- Override it
     },
   },
+  settings: {
+    // ...
+    'import/resolver': {
+      typescript: {
+        // ...
+        project: [ // <-- Override this as well
+          'packages/*/tsconfig.json',
+          'tsconfig.json',
+        ]
+      },
+    },
+  }  
 }
 ```
-
-## Development
-
-- The [official docs](https://eslint.org/docs/developer-guide/shareable-configs) for eslint sharable config
-- Once [eslint#3458](https://github.com/eslint/eslint/issues/3458) is resolved, some of `peerDependencies` (plugins) can be re-organized as a `dependencies` of `@jjangga0214/eslint-configurer`, which means current `peerDependencies` can become transitive dependencies (`dependencies` of `dependencies`).

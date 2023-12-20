@@ -11,7 +11,7 @@ module.exports = {
   prompt: {
     settings: {
       enableMultipleScopes: true,
-      scopeEnumSeparator: ','
-    }
+      scopeEnumSeparator: ',',
+    },
   },
 }

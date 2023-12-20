@@ -7,6 +7,15 @@
     "access": "public"
   },
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./javascript": "./javascript.js",
+    "./typescript": "./typescript.js",
+    "./react": "./react.js",
+    "./jest": "./jest.js",
+    "./commonjs": "./commonjs.js",
+    "./helpers": "./helpers.js"
+  },
   "files": [
     "index.js"
   ],
@@ -36,35 +45,31 @@
     "react"
   ],
   "dependencies": {
-    "@jjangga0214/eslint-configurer": "workspace:*"
+    "@eslint/js": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-prettier": "^5.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unicorn": "^49.0.0",
+    "globals": "^13.24.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.13.1",
     "eslint": ">=8.2.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.3",
-    "eslint-plugin-markdown": "^2.2.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-unicorn": "^39.0.0",
-    "prettier": ">=2.0.0",
-    "typescript": ">=4.0.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "prettier": ">=3.0.0",
+    "typescript": ">=5.0.0"
   },
   "peerDependenciesMeta": {
-    "eslint-plugin-jsx-a11y": {
-      "optional": true
-    },
-    "eslint-plugin-react": {
-      "optional": true
-    },
-    "eslint-plugin-react-hooks": {
+    "typescript": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "eslint": ">=8.0.0"
   }
 }

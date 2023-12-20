@@ -1,4 +1,4 @@
-const { pathsToModuleNameMapper } = require("ts-jest")
+const { pathsToModuleNameMapper } = require('ts-jest')
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
@@ -25,7 +25,7 @@ const baseConfig = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -33,12 +33,12 @@ const baseConfig = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: [
-    "json",
-    "html",
+    'json',
+    'html',
     //   "text",
     //   "lcov",
     //   "clover"
@@ -74,14 +74,7 @@ const baseConfig = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
-  ],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
@@ -161,10 +154,7 @@ const baseConfig = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: [
-    "/node_modules/",
-    "dist"
-  ],
+  testPathIgnorePatterns: ['/node_modules/', 'dist'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -213,16 +203,17 @@ const baseConfig = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-function produceConfig({ tsConfig: { compilerOptions: { paths } } }) {
+function produceConfig({
+  tsConfig: {
+    compilerOptions: { paths },
+  },
+}) {
   return {
     ...baseConfig,
     moduleNameMapper: {
-      ...pathsToModuleNameMapper(
-        paths,
-        { prefix: '<rootDir>/' }
-      ),
+      ...pathsToModuleNameMapper(paths, { prefix: '<rootDir>/' }),
       ...baseConfig.moduleNameMapper, // The order matters
     },
   }
