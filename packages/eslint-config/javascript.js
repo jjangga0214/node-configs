@@ -140,7 +140,7 @@ module.exports = [
     rules: prettier.configs.recommended.rules,
   },
   {
-    // name: "personal:javascript",
+    // name: "personal:javascript/1",
     plugins: {
       unicorn,
       import: _import,
@@ -172,6 +172,22 @@ module.exports = [
     },
     linterOptions: {
       reportUnusedDisableDirectives: true, // REF: https://eslint.org/docs/latest/use/configure/rules#report-unused-eslint-disable-comments
+    },
+  },
+  {
+    // name: "personal:javascript/2",
+    files: [
+      '**/eslint.config.{c,m,}{j,t}s',
+      '**/haetae.config.{c,m,}{j,t}s',
+      '**/prettier.config.{c,m,}{j,t}s',
+      '**/.prettierrc.{c,m,}{j,t}s',
+      '**/commitlint.config.{c,m,}{j,t}s',
+    ],
+    plugins: {
+      import: _import,
+    },
+    rules: {
+      'import/no-extraneous-dependencies': 'off',
     },
   },
 ]

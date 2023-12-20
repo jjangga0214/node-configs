@@ -1,6 +1,6 @@
 const unicorn = require('eslint-plugin-unicorn')
-const { files } = require('./helpers')
 const globals = require('globals')
+const { files } = require('./helpers')
 
 module.exports = [
   {
