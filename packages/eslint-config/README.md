@@ -14,7 +14,7 @@ yarn add --dev @jjangga0214/eslint-config
 pnpm add --save-dev @jjangga0214/eslint-config
 ```
 
-And make sure `peerDependencies` is satisfied.
+And make sure `peerDependencies` are satisfied.
 
 ```sh
 # This does not install them all. This just show them on terminal.
@@ -46,7 +46,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 **eslint.config.js**:
 
 ```js
-import { ignores } from '@jjangga0214/eslint-config/helpers'
+import helpers from '@jjangga0214/eslint-config/helpers'
 import javascript from '@jjangga0214/eslint-config/javascript'
 import typescript from '@jjangga0214/eslint-config/typescript'
 import jest from '@jjangga0214/eslint-config/jest'
@@ -54,30 +54,32 @@ import react from '@jjangga0214/eslint-config/react'
 
 export default [
   {
-    ignores,
+    ignores: helpers.ignores,
   },
-  ...javascript, // You must include this even for typescript.
+  ...javascript, // You MUST include this even for typescript and jsx.
   ...jest, // Include this only if you use jest
   ...typescript, // Include this only if you use typescript
   ...react, // Include this only if you use react
 ]
 ```
 
+The example above is equivalent to just directly importing `@jjangga0214/eslint-config`.
+
+```js
+import config from '@jjangga0214/eslint-config'
+
+export default config
+```
+
 ESM is configured by default.
 For CJS, use `@jjangga0214/eslint-config/commonjs`
 
 ```js
-// Others are omitted for brevity
+import config from '@jjangga0214/eslint-config'
 import commonjs from '@jjangga0214/eslint-config/commonjs'
 
 export default [
-  {
-    ignores,
-  },
-  ...javascript, 
-  ...jest, 
-  ...typescript,
-  ...react,
+  ...config,
   ...commonjs,
 ]
 ```
@@ -115,3 +117,9 @@ AND
   }  
 }
 ```
+
+## Development Note
+
+The config depends on other popular sharable configs.
+Some of them do not provide flat configs, yet.
+So `@jjangga0214/eslint-config` [transforms them internally](https://github.com/eslint/eslint/discussions/16291).

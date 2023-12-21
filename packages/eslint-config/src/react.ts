@@ -1,14 +1,22 @@
-const airbnbReact = require('eslint-config-airbnb/rules/react')
-const airbnbReactA11y = require('eslint-config-airbnb/rules/react-a11y')
-const airbnbReactHooks = require('eslint-config-airbnb/rules/react-hooks')
-const airbnbTs = require('eslint-config-airbnb-typescript')
-const react = require('eslint-plugin-react')
-const reactHooks = require('eslint-plugin-react-hooks')
-const jsxA11y = require('eslint-plugin-jsx-a11y')
-const unicorn = require('eslint-plugin-unicorn')
-const globals = require('globals')
+// @ts-ignore
+import airbnbReact from 'eslint-config-airbnb/rules/react'
+// @ts-ignore
+import airbnbReactA11y from 'eslint-config-airbnb/rules/react-a11y'
+// @ts-ignore
+import airbnbReactHooks from 'eslint-config-airbnb/rules/react-hooks'
+// @ts-ignore
+import airbnbTs from 'eslint-config-airbnb-typescript'
+// @ts-ignore
+import react from 'eslint-plugin-react'
+// @ts-ignore
+import reactHooks from 'eslint-plugin-react-hooks'
+// @ts-ignore
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+// @ts-ignore
+import unicorn from 'eslint-plugin-unicorn'
+import globals from 'globals'
 
-module.exports = [
+export = [
   {
     // name: "personal:react/filename-case",
     files: ['**/*.{c,m,}{j,t}s{x,}'],
@@ -93,4 +101,4 @@ module.exports = [
       ],
     },
   },
-]
+] as const

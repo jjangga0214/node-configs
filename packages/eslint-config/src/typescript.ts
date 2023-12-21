@@ -1,11 +1,13 @@
-const _import = require('eslint-plugin-import')
-const tsEslint = require('@typescript-eslint/eslint-plugin')
-const tsParser = require('@typescript-eslint/parser')
-const airbnbTsLibShared = require('eslint-config-airbnb-typescript/lib/shared')
-const globals = require('globals')
+// @ts-ignore
+import * as _import from 'eslint-plugin-import'
+import tsEslint from '@typescript-eslint/eslint-plugin'
+// @ts-ignore (bug)
+import tsParser from '@typescript-eslint/parser'
+// @ts-ignore
+import airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
+import globals from 'globals'
 
-// REF: https://github.com/eslint/eslint/discussions/16291
-module.exports = [
+export = [
   {
     files: ['**/*.{c,m,}ts'],
     languageOptions: {
@@ -150,4 +152,4 @@ module.exports = [
       },
     },
   },
-]
+] as unknown[]

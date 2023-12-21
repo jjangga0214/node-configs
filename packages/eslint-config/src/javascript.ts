@@ -1,20 +1,33 @@
-const js = require('@eslint/js')
-const prettier = require('eslint-plugin-prettier')
-const markdown = require('eslint-plugin-markdown')
-const unicorn = require('eslint-plugin-unicorn')
+// @ts-ignore
+import js from '@eslint/js'
+// @ts-ignore
+import prettier from 'eslint-plugin-prettier'
+// @ts-ignore
+import markdown from 'eslint-plugin-markdown'
+// @ts-ignore
+import unicorn from 'eslint-plugin-unicorn'
+// @ts-ignore
+import * as _import from 'eslint-plugin-import'
+// @ts-ignore
+import prettierConfig from 'eslint-config-prettier'
+// @ts-ignore
+import airbnbBestPractices from 'eslint-config-airbnb-base/rules/best-practices'
+// @ts-ignore
+import airbnbNode from 'eslint-config-airbnb-base/rules/node'
+// @ts-ignore
+import airbnbStyle from 'eslint-config-airbnb-base/rules/style'
+// @ts-ignore
+import airbnbVariables from 'eslint-config-airbnb-base/rules/variables'
+// @ts-ignore
+import airbnbEs6 from 'eslint-config-airbnb-base/rules/es6'
+// @ts-ignore
+import airbnbImports from 'eslint-config-airbnb-base/rules/imports'
+// @ts-ignore
+import airbnbStrict from 'eslint-config-airbnb-base/rules/strict'
+// @ts-ignore
+import globals from 'globals'
 
-const _import = require('eslint-plugin-import')
-const prettierConfig = require('eslint-config-prettier')
-const airbnbBestPractices = require('eslint-config-airbnb-base/rules/best-practices')
-const airbnbNode = require('eslint-config-airbnb-base/rules/node')
-const airbnbStyle = require('eslint-config-airbnb-base/rules/style')
-const airbnbVariables = require('eslint-config-airbnb-base/rules/variables')
-const airbnbEs6 = require('eslint-config-airbnb-base/rules/es6')
-const airbnbImports = require('eslint-config-airbnb-base/rules/imports')
-const airbnbStrict = require('eslint-config-airbnb-base/rules/strict')
-const globals = require('globals')
-
-module.exports = [
+export = [
   {
     files: ['**/*.{c,m,}js'],
     languageOptions: {
@@ -177,11 +190,8 @@ module.exports = [
   {
     // name: "personal:javascript/2",
     files: [
-      '**/eslint.config.{c,m,}{j,t}s',
-      '**/haetae.config.{c,m,}{j,t}s',
-      '**/prettier.config.{c,m,}{j,t}s',
+      '**/{eslint,haetae,prettier,commitlint}.config.{c,m,}{j,t}s',
       '**/.prettierrc.{c,m,}{j,t}s',
-      '**/commitlint.config.{c,m,}{j,t}s',
     ],
     plugins: {
       import: _import,
@@ -190,4 +200,4 @@ module.exports = [
       'import/no-extraneous-dependencies': 'off',
     },
   },
-]
+] as const

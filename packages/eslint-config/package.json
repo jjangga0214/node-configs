@@ -8,42 +8,21 @@
   },
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./javascript": "./javascript.js",
-    "./typescript": "./typescript.js",
-    "./react": "./react.js",
-    "./jest": "./jest.js",
-    "./commonjs": "./commonjs.js",
-    "./helpers": "./helpers.js"
+    ".": "./dist/index.js",
+    "./javascript": "./dist/javascript.js",
+    "./typescript": "./dist/typescript.js",
+    "./react": "./dist/react.js",
+    "./jest": "./dist/jest.js",
+    "./commonjs": "./dist/commonjs.js",
+    "./helpers": "./dist/helpers.js"
   },
   "files": [
-    "index.js"
+    "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jjangga0214/node-configs.git"
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc"
   },
-  "bugs": {
-    "url": "https://github.com/jjangga0214/node-configs/issues"
-  },
-  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/eslint-config",
-  "author": {
-    "name": "GIL B. Chan",
-    "email": "bnbcmindnpass@gmail.com",
-    "url": "https://github.com/jjangga0214"
-  },
-  "keywords": [
-    "boilerplate",
-    "config",
-    "sharable",
-    "env",
-    "eslint",
-    "eslintconfig",
-    "sharable config",
-    "typescript",
-    "jest",
-    "react"
-  ],
   "dependencies": {
     "@eslint/js": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
@@ -71,5 +50,35 @@
     "typescript": {
       "optional": true
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/eslint-config",
+  "author": {
+    "name": "GIL B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "sharable",
+    "env",
+    "eslint",
+    "eslintconfig",
+    "flat",
+    "flat config",
+    "sharable config",
+    "typescript",
+    "jest",
+    "react"
+  ],
+  "devDependencies": {
+    "type-fest": "^4.8.3"
   }
 }

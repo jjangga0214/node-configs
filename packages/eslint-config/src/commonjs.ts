@@ -1,10 +1,11 @@
-const unicorn = require('eslint-plugin-unicorn')
-const globals = require('globals')
-const { files } = require('./helpers')
+// @ts-ignore
+import unicorn from 'eslint-plugin-unicorn'
+import globals from 'globals'
+import helpers from './helpers'
 
-module.exports = [
+export = [
   {
-    files: files.javascript.plain,
+    files: helpers.files.javascript.plain,
     languageOptions: {
       sourceType: 'commonjs',
       globals: {
@@ -19,4 +20,4 @@ module.exports = [
       'unicorn/prefer-module': 'off',
     },
   },
-]
+] as const

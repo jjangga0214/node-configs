@@ -1,6 +1,7 @@
-const globals = require('globals')
+import globals from 'globals'
+import { ReadonlyDeep } from 'type-fest'
 
-module.exports = {
+const others = {
   ignores: ['**/{.,}{dist,tmp,coverage,changeset,generated}/**', '**/tmp.*'],
   files: {
     all: ['**/*.{c,m,}{j,t}s{x,}'],
@@ -33,5 +34,12 @@ module.exports = {
       '**/__tests__/**/*.{c,m,}{j,t}s{x,}',
     ],
   },
+  // globals,
+} as const
+
+const helpers: ReadonlyDeep<typeof others & { globals: typeof globals }> = {
+  ...others,
   globals,
 }
+
+export = helpers
