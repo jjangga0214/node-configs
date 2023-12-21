@@ -1,10 +1,10 @@
 // @ts-ignore
 import * as _import from 'eslint-plugin-import'
-import tsEslint from '@typescript-eslint/eslint-plugin'
+import * as tsEslint from '@typescript-eslint/eslint-plugin'
 // @ts-ignore (bug)
-import tsParser from '@typescript-eslint/parser'
+import * as tsParser from '@typescript-eslint/parser'
 // @ts-ignore
-import airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
+import * as airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
 import globals from 'globals'
 
 export = [
@@ -66,11 +66,11 @@ export = [
   {
     // name: "plugin:@typescript-eslint/eslint-recommended",
     files: ['**/*.{c,m,}ts{x,}'],
-    languageOptions: {
-      parser: tsParser,
-    },
     plugins: {
       '@typescript-eslint': tsEslint,
+    },
+    languageOptions: {
+      parser: tsParser,
     },
     rules: {
       'constructor-super': 'off',
@@ -98,11 +98,11 @@ export = [
   {
     // name: "plugin:@typescript-eslint/recommended",
     files: ['**/*.{c,m,}ts{x,}'],
-    languageOptions: {
-      parser: tsParser,
-    },
     plugins: {
       '@typescript-eslint': tsEslint,
+    },
+    languageOptions: {
+      parser: tsParser,
     },
     rules: tsEslint.configs.recommended.rules,
   },

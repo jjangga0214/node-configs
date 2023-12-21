@@ -1,6 +1,6 @@
 # node-configs
 
-Monorepo for sharable config packages for nodejs (including browser environment) projects.
+Monorepo for sharable config packages for node.js (including browser environment) projects.
 
 [![License](https://img.shields.io/badge/License-MIT-ff4081.svg?style=flat-square&labelColor=black)](./LICENSE)
 
