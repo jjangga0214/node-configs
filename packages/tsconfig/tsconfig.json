@@ -102,6 +102,7 @@
   },
   // REF: https://typestrong.org/ts-node/docs/transpilers
   "ts-node": {
+    "esm": true,
     "swc": true
   }
 }

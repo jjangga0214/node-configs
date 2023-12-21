@@ -6,10 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "main": "tsconfig.json",
   "files": [
-    "tsconfig.json",
-    "index.js"
+    "tsconfig.json"
   ],
   "repository": {
     "type": "git",
