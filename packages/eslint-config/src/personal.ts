@@ -8,8 +8,6 @@ import unicorn from 'eslint-plugin-unicorn'
 import * as _import from 'eslint-plugin-import'
 // @ts-ignore
 import prettierConfig from 'eslint-config-prettier'
-// @ts-ignore
-import * as _import from 'eslint-plugin-import'
 import * as tsEslint from '@typescript-eslint/eslint-plugin'
 // @ts-ignore (bug)
 import * as tsParser from '@typescript-eslint/parser'

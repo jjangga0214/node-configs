@@ -1,4 +1,5 @@
 import globals from 'globals'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ReadonlyDeep } from 'type-fest'
 
 const others = {
