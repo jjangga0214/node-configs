@@ -14,7 +14,8 @@
     "./react": "./dist/react.js",
     "./jest": "./dist/jest.js",
     "./commonjs": "./dist/commonjs.js",
-    "./helpers": "./dist/helpers.js"
+    "./helpers": "./dist/helpers.js",
+    "./personal": "./dist/personal.js"
   },
   "files": [
     "dist"

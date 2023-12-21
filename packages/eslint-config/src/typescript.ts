@@ -6,6 +6,7 @@ import * as tsParser from '@typescript-eslint/parser'
 // @ts-ignore
 import * as airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
 import globals from 'globals'
+import personal from './personal'
 
 export = [
   {
@@ -114,42 +115,5 @@ export = [
     settings: _import.configs.typescript.settings,
     rules: _import.configs.typescript.rules,
   },
-  {
-    // [personal config]
-    // name: "personal:typescript",
-    files: ['**/*.{c,m,}ts{x,}'],
-    plugins: {
-      '@typescript-eslint': tsEslint,
-    },
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        // REF: https://www.npmjs.com/package/eslint-config-airbnb-typescript
-        project: ['./packages/*/tsconfig.json', './tsconfig.json'],
-      },
-    },
-    rules: {
-      '@typescript-eslint/no-shadow': 'off',
-      '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-    },
-    settings: {
-      'import/parsers': {
-        '@typescript-eslint/parser': [
-          '.ts',
-          '.tsx',
-          '.cts',
-          '.ctsx',
-          '.mts',
-          '.mtsx',
-        ],
-      },
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-          project: ['packages/*/tsconfig.json', 'tsconfig.json'],
-        },
-      },
-    },
-  },
+  ...personal,
 ] as unknown[]

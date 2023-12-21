@@ -9,7 +9,7 @@ export = [
     ignores: helpers.ignores,
   },
   ...javascript,
-  ...jest,
   ...typescript,
   ...react,
+  ...jest,
 ]

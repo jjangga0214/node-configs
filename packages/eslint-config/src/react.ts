@@ -15,6 +15,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 // @ts-ignore
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
+import personal from './personal'
 
 export = [
   {
@@ -82,23 +83,5 @@ export = [
     settings: airbnbTs.settings,
     rules: airbnbTs.rules,
   },
-  {
-    // name: "personal:react/filename-case",
-    files: ['**/*.{c,m,}{j,t}sx'],
-    plugins: {
-      unicorn,
-    },
-    rules: {
-      'unicorn/filename-case': [
-        // REF: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
-        'warn',
-        {
-          cases: {
-            kebabCase: true,
-            pascalCase: true,
-          },
-        },
-      ],
-    },
-  },
+  ...personal,
 ] as const

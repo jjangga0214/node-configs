@@ -1,6 +1,6 @@
 # `@jjangga0214/eslint-config`
 
-An ESlint [`Sharable Config`](https://eslint.org/docs/latest/developer-guide/shareable-configs) for javascript, typescript, react, and jest.
+An ESlint `Shareable Config` for javascript, typescript, react, and jest.
 
 This package is for ESLint's new [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-1/).
 
@@ -34,12 +34,13 @@ npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 
 ## Entrypoints
 
-- [`@jjangga0214/eslint-config/javascript`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/javascript.js): Sharable config for javascript
-- [`@jjangga0214/eslint-config/typescript`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/typescript.js): Sharable config for typescript
-- [`@jjangga0214/eslint-config/jest`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/jest.js): Sharable config for jest
-- [`@jjangga0214/eslint-config/react`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/react.js): Sharable config for react
-- [`@jjangga0214/eslint-config/commonjs`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/commonjs.js): Sharable config for CJS.
-- [`@jjangga0214/eslint-config/helpers`](https://github.com/jjangga0214/node-configs/blob/main/packages/eslint-config/helpers.js): Utility helpers
+- [`@jjangga0214/eslint-config/helpers`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/helpers.ts): Utility helpers
+- [`@jjangga0214/eslint-config/javascript`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/javascript.ts): Sharable config for javascript
+- [`@jjangga0214/eslint-config/typescript`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/typescript.ts): Sharable config for typescript
+- [`@jjangga0214/eslint-config/react`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/react.ts): Sharable config for react
+- [`@jjangga0214/eslint-config/jest`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/jest.ts): Sharable config for jest
+- [`@jjangga0214/eslint-config/commonjs`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/commonjs.ts): Sharable config for CJS.
+- [`@jjangga0214/eslint-config/personal`](https://github.com/jjangga0214/node-configs/blob/main/packages/src/eslint-config/personal.ts): Personal overrider.
 
 ## Usage
 
@@ -56,10 +57,11 @@ export default [
   {
     ignores: helpers.ignores,
   },
+  // The order matters!
   ...javascript, // You MUST include this even for typescript and jsx.
-  ...jest, // Include this only if you use jest
   ...typescript, // Include this only if you use typescript
   ...react, // Include this only if you use react
+  ...jest, // Include this only if you use jest
 ]
 ```
 
@@ -81,6 +83,35 @@ import commonjs from '@jjangga0214/eslint-config/commonjs'
 export default [
   ...config,
   ...commonjs,
+]
+```
+
+Entry points of `/javascript`, `/typescript`, `/react`, and `/jest` are all mainly composed of popular 3rd-party configs.
+At the end of them, `@jjangga0214/eslint-config/personal` overrides partial rules internally.
+
+When you need other configurations at the end,
+
+```js
+import config from '@jjangga0214/eslint-config'
+
+export default [
+  ...config,
+  { /* Your another config */ }, // <-- This may override too widely
+]
+```
+
+sometimes its range is too wide.
+
+Then use `/personal` to finalize.
+
+```js
+import config from '@jjangga0214/eslint-config'
+import personal from '@jjangga0214/eslint-config/personal'
+
+export default [
+  ...config,
+  { /* Your another config */ },
+  ...personal,
 ]
 ```
 
