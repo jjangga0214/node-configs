@@ -5,5 +5,5 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "rootDir": "."
-  }
+  },
 }
