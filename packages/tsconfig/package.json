@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/tsconfig",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "A sharable config package for Typescript",
   "license": "MIT",
   "publishConfig": {
