@@ -100,7 +100,6 @@
   },
   // REF: https://typestrong.org/ts-node/docs/transpilers
   "ts-node": {
-    "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
+    "swc": true
   }
 }
