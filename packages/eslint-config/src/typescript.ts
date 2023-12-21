@@ -1,6 +1,6 @@
 // @ts-ignore
 import * as _import from 'eslint-plugin-import'
-import * as tsEslint from '@typescript-eslint/eslint-plugin'
+import ts from '@typescript-eslint/eslint-plugin'
 // @ts-ignore (bug)
 import * as tsParser from '@typescript-eslint/parser'
 // @ts-ignore
@@ -22,7 +22,7 @@ export = [
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
       import: _import,
-      '@typescript-eslint': tsEslint,
+      '@typescript-eslint': ts,
     },
     languageOptions: {
       parser: tsParser,
@@ -35,7 +35,7 @@ export = [
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
       import: _import,
-      '@typescript-eslint': tsEslint,
+      '@typescript-eslint': ts,
     },
     languageOptions: {
       parser: tsParser,
@@ -68,7 +68,7 @@ export = [
     // name: "plugin:@typescript-eslint/eslint-recommended",
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      '@typescript-eslint': tsEslint,
+      '@typescript-eslint': ts,
     },
     languageOptions: {
       parser: tsParser,
@@ -100,12 +100,12 @@ export = [
     // name: "plugin:@typescript-eslint/recommended",
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      '@typescript-eslint': tsEslint,
+      '@typescript-eslint': ts,
     },
     languageOptions: {
       parser: tsParser,
     },
-    rules: tsEslint.configs.recommended.rules,
+    rules: ts.configs.recommended.rules,
   },
   {
     files: ['**/*.{c,m,}ts{x,}'],

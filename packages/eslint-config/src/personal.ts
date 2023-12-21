@@ -1,4 +1,6 @@
 // @ts-ignore
+import prettierConfig from 'eslint-config-prettier'
+// @ts-ignore
 import prettier from 'eslint-plugin-prettier'
 // @ts-ignore
 import markdown from 'eslint-plugin-markdown'
@@ -6,9 +8,7 @@ import markdown from 'eslint-plugin-markdown'
 import unicorn from 'eslint-plugin-unicorn'
 // @ts-ignore
 import * as _import from 'eslint-plugin-import'
-// @ts-ignore
-import prettierConfig from 'eslint-config-prettier'
-import * as tsEslint from '@typescript-eslint/eslint-plugin'
+import ts from '@typescript-eslint/eslint-plugin'
 // @ts-ignore (bug)
 import * as tsParser from '@typescript-eslint/parser'
 
@@ -96,7 +96,7 @@ export = [
     // name: "personal:typescript",
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      '@typescript-eslint': tsEslint,
+      '@typescript-eslint': ts,
     },
     languageOptions: {
       parser: tsParser,
