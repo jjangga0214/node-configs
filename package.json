@@ -9,6 +9,18 @@
     "pnpm": ">=8"
   },
   "packageManager": "pnpm@8.12.1",
+  "prettier": "@jjangga0214/prettier-config",
+  "devDependencies": {
+    "@jjangga0214/eslint-config": "workspace:*",
+    "@jjangga0214/prettier-config": "workspace:*",
+    "@jjangga0214/tsconfig": "workspace:*",
+    "@swc/core": "^1.3.101",
+    "@swc/helpers": "^0.5.3",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "regenerator-runtime": "^0.13.9",
+    "ts-node": "^10.9.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jjangga0214/node-configs.git"
@@ -21,15 +33,5 @@
     "name": "GIL B. Chan",
     "email": "bnbcmindnpass@gmail.com",
     "url": "https://github.com/jjangga0214"
-  },
-  "devDependencies": {
-    "@jjangga0214/eslint-config": "workspace:*",
-    "@jjangga0214/tsconfig": "workspace:*",
-    "@swc/core": "^1.3.101",
-    "@swc/helpers": "^0.5.3",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "regenerator-runtime": "^0.13.9",
-    "ts-node": "^10.9.2"
   }
 }
