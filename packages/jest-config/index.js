@@ -74,15 +74,11 @@ const baseConfig = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  moduleFileExtensions: ['js', 'jsx', 'cjs', 'cjsx', 'mjs', 'mjsx', 'ts', 'tsx', 'cts', 'ctsx', 'mts', 'mtsx', 'json', 'jsonc', 'node'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^(\\.{1,2}/.+)\\.jsx?$': '$1', // REF: https://stackoverflow.com/questions/66154478/jest-ts-jest-typescript-with-es-modules-import-cannot-find-module
-    '^(\\.{1,2}/.+)\\.cjs$': ['$1.cjs', '$1.cts'],
-    '^(\\.{1,2}/.+)\\.mjs$': ['$1.mjs', '$1.mts'],
-    '^(\\.{1,2}/.+)\\.cjsx$': ['$1.cjsx', '$1.ctsx'],
-    '^(\\.{1,2}/.+)\\.mjsx$': ['$1.mjsx', '$1.mtsx'],
+    '^(\\.{1,2}/.+)\\.(c|m)?jsx?$': $1, // REF: https://stackoverflow.com/questions/66154478/jest-ts-jest-typescript-with-es-modules-import-cannot-find-module
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

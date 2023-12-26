@@ -41,7 +41,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 
 ### For a project not using an alias
 
-If your project is pure javascript or does not need [Typescript paths mappting](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and [jest's `moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
+If your project is pure javascript or does not need [Typescript paths mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and jest's [`moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
 
 ```js
 import { config } from '@jjangga0214/jest-config'
