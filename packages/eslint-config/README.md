@@ -154,3 +154,4 @@ AND
 The config depends on other popular sharable configs.
 Some of them do not provide flat configs, yet.
 So `@jjangga0214/eslint-config` [transforms them internally](https://github.com/eslint/eslint/discussions/16291).
+Though more concise porting is possible, they are intentionally converted as-is for comparability.
