@@ -105,7 +105,7 @@ export = [
     languageOptions: {
       parser: tsParser,
     },
-    rules: ts.configs.recommended.rules,
+    rules: ts.configs['recommended-type-checked'].rules,
   },
   {
     files: ['**/*.{c,m,}ts{x,}'],

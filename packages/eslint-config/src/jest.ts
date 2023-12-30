@@ -32,17 +32,4 @@ export = [
     },
     rules: jest.configs.all.rules,
   },
-  {
-    // name: "personal:jest/off-ts-rules-for-js",
-    files: [
-      // only JS, not TS
-      '**/*.{test,spec}.{c,m,}js{x,}',
-      '**/__tests__/**/*.{c,m,}js{x,}',
-    ],
-    rules: {
-      // REF: https://github.com/jest-community/eslint-plugin-jest#requires-type-checking
-      // Currently, this is the only rule that requires type checking.
-      'jest/unbound-method:': 'off',
-    }
-  },
 ]
