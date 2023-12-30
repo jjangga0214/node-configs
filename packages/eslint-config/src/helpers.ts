@@ -3,7 +3,12 @@ import globals from 'globals'
 import { ReadonlyDeep } from 'type-fest'
 
 const others = {
-  ignores: ['**/{.,}{dist,tmp,coverage,changeset,generated}/**', '**/tmp.*', '**/*.tmp.*', '**/tmp/**'],
+  ignores: [
+    '**/{.,}{dist,coverage,generated,tmp}',
+    '**/{changeset,.next}',
+    '**/*.tmp.*',
+    '**/tmp.*',
+  ],
   files: {
     all: ['**/*.{c,m,}{j,t}s{x,}'],
     node: {

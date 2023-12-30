@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import helpers from './helpers'

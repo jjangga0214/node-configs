@@ -11,6 +11,9 @@ importers:
       '@jjangga0214/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@jjangga0214/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
       '@jjangga0214/tsconfig':
         specifier: workspace:*
         version: link:packages/tsconfig

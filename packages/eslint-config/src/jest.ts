@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error no declaration file
 import jest from 'eslint-plugin-jest'
 import globals from 'globals'
 

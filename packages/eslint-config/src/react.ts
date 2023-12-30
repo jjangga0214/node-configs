@@ -1,19 +1,17 @@
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbReact from 'eslint-config-airbnb/rules/react'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbReactA11y from 'eslint-config-airbnb/rules/react-a11y'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbReactHooks from 'eslint-config-airbnb/rules/react-hooks'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbTs from 'eslint-config-airbnb-typescript'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import react from 'eslint-plugin-react'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import reactHooks from 'eslint-plugin-react-hooks'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import jsxA11y from 'eslint-plugin-jsx-a11y'
-// @ts-ignore
-import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import personal from './personal'
 

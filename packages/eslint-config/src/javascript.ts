@@ -1,30 +1,23 @@
-// @ts-ignore
+// @ts-expect-error no declaration file
 import js from '@eslint/js'
-// @ts-ignore
-import prettier from 'eslint-plugin-prettier'
-// @ts-ignore
-import markdown from 'eslint-plugin-markdown'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import * as _import from 'eslint-plugin-import'
-// @ts-ignore
-import prettierConfig from 'eslint-config-prettier'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbBestPractices from 'eslint-config-airbnb-base/rules/best-practices'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbNode from 'eslint-config-airbnb-base/rules/node'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbStyle from 'eslint-config-airbnb-base/rules/style'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbVariables from 'eslint-config-airbnb-base/rules/variables'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbEs6 from 'eslint-config-airbnb-base/rules/es6'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbImports from 'eslint-config-airbnb-base/rules/imports'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import airbnbStrict from 'eslint-config-airbnb-base/rules/strict'
-// @ts-ignore
 import globals from 'globals'
 import personal from './personal'
 

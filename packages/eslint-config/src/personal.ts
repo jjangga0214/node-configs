@@ -1,15 +1,14 @@
-// @ts-ignore
+// @ts-expect-error no declaration file
 import prettierConfig from 'eslint-config-prettier'
-// @ts-ignore
 import prettier from 'eslint-plugin-prettier'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import markdown from 'eslint-plugin-markdown'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
-// @ts-ignore
+// @ts-expect-error no declaration file
 import * as _import from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
-// @ts-ignore (bug)
+// @ts-expect-error no declaration file
 import * as tsParser from '@typescript-eslint/parser'
 
 export = [
