@@ -7,30 +7,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
-    "index.js"
+    "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jjangga0214/node-configs.git"
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "tsc -p tsconfig.build.json"
   },
-  "bugs": {
-    "url": "https://github.com/jjangga0214/node-configs/issues"
-  },
-  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/jest-config",
-  "author": {
-    "name": "GIL B. Chan",
-    "email": "bnbcmindnpass@gmail.com",
-    "url": "https://github.com/jjangga0214"
-  },
-  "keywords": [
-    "boilerplate",
-    "config",
-    "sharable",
-    "env",
-    "jest"
-  ],
   "dependencies": {
     "ts-jest": "^29.1.1"
   },
@@ -51,7 +40,24 @@
       "optional": true
     }
   },
-  "scripts": {
-    "test": "jest"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjangga0214/node-configs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjangga0214/node-configs/issues"
+  },
+  "homepage": "https://github.com/jjangga0214/node-configs/tree/main/packages/jest-config",
+  "author": {
+    "name": "GIL B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://github.com/jjangga0214"
+  },
+  "keywords": [
+    "boilerplate",
+    "config",
+    "sharable",
+    "env",
+    "jest"
+  ]
 }

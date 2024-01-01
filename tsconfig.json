@@ -1,13 +1,9 @@
 {
-  "extends": "@jjangga0214/tsconfig/tsconfig.json",
+  "extends": "@jjangga0214/tsconfig",
   "compilerOptions": {
     "target": "ES2021",
     "lib": ["ES2021"],
     "module": "node16",
     "moduleResolution": "node16"
-  },
-  // REF: https://typestrong.org/ts-node/docs/transpilers
-  "ts-node": {
-    "esm": false
   }
 }
