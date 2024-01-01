@@ -3,7 +3,7 @@ import js from '@eslint/js'
 // @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 // @ts-expect-error no declaration file
-import * as _import from 'eslint-plugin-import'
+import * as importPlugin from 'eslint-plugin-import'
 // @ts-expect-error no declaration file
 import airbnbBestPractices from 'eslint-config-airbnb-base/rules/best-practices'
 // @ts-expect-error no declaration file
@@ -35,9 +35,9 @@ export = [
   {
     // name: "plugin:import/recommended",
     plugins: {
-      import: _import,
+      import: importPlugin,
     },
-    rules: _import.configs.recommended.rules,
+    rules: importPlugin.configs.recommended.rules,
   },
   {
     plugins: {
@@ -71,9 +71,9 @@ export = [
     rules: airbnbEs6.rules,
   },
   {
-    // name: "eslint-config-airbnb-base/rules/import",
+    // name: "eslint-config-airbnb-base/rules/imports",
     plugins: {
-      import: _import,
+      import: importPlugin,
     },
     settings: airbnbImports.settings,
     rules: airbnbImports.rules,

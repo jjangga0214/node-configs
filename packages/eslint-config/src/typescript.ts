@@ -1,5 +1,5 @@
 // @ts-expect-error no declaration file
-import * as _import from 'eslint-plugin-import'
+import * as importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
 // @ts-expect-error no declaration file
 import * as tsParser from '@typescript-eslint/parser'
@@ -21,7 +21,7 @@ export = [
   {
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      import: _import,
+      import: importPlugin,
       '@typescript-eslint': ts,
     },
     languageOptions: {
@@ -34,7 +34,7 @@ export = [
     // Patched from eslint-config-airbnb-typescript/lib/shared
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      import: _import,
+      import: importPlugin,
       '@typescript-eslint': ts,
     },
     languageOptions: {
@@ -110,10 +110,10 @@ export = [
   {
     files: ['**/*.{c,m,}ts{x,}'],
     plugins: {
-      import: _import,
+      import: importPlugin,
     },
-    settings: _import.configs.typescript.settings,
-    rules: _import.configs.typescript.rules,
+    settings: importPlugin.configs.typescript.settings,
+    rules: importPlugin.configs.typescript.rules,
   },
   ...personal,
 ] as const

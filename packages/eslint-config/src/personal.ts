@@ -6,7 +6,7 @@ import markdown from 'eslint-plugin-markdown'
 // @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 // @ts-expect-error no declaration file
-import * as _import from 'eslint-plugin-import'
+import * as importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
 // @ts-expect-error no declaration file
 import * as tsParser from '@typescript-eslint/parser'
@@ -28,7 +28,7 @@ export = [
     files: ['**/*.{c,m,}{j,t}s{x,}'],
     plugins: {
       unicorn,
-      import: _import,
+      import: importPlugin,
       prettier,
     },
     rules: {
@@ -85,7 +85,7 @@ export = [
       '**/.prettierrc.{c,m,}{j,t}s',
     ],
     plugins: {
-      import: _import,
+      import: importPlugin,
     },
     rules: {
       'import/no-extraneous-dependencies': 'off',
@@ -166,7 +166,7 @@ export = [
     // appended to the Markdown file's path.
     files: ['**/*.md/*.{m,c,}{j,t}s{x,}'],
     plugins: {
-      import: _import,
+      import: importPlugin,
     },
     languageOptions: {
       parserOptions: {
