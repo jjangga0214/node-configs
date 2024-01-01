@@ -3,10 +3,11 @@
   "version": "2.0.3",
   "description": "A sharable config package for prettier",
   "license": "MIT",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "exports": "./index.js",
   "files": [
     "index.js"
   ],
