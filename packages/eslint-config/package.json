@@ -7,16 +7,39 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
   "exports": {
-    ".": "./dist/index.js",
-    "./javascript": "./dist/javascript.js",
-    "./typescript": "./dist/typescript.js",
-    "./react": "./dist/react.js",
-    "./jest": "./dist/jest.js",
-    "./commonjs": "./dist/commonjs.js",
-    "./helpers": "./dist/helpers.js",
-    "./personal": "./dist/personal.js"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./javascript": {
+      "import": "./dist/javascript.js",
+      "types": "./dist/javascript.d.ts"
+    },
+    "./typescript": {
+      "import": "./dist/typescript.js",
+      "types": "./dist/typescript.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react.js",
+      "types": "./dist/react.d.ts"
+    },
+    "./jest": {
+      "import": "./dist/jest.js",
+      "types": "./dist/jest.d.ts"
+    },
+    "./commonjs": {
+      "import": "./dist/commonjs.js",
+      "types": "./dist/commonjs.d.ts"
+    },
+    "./helpers": {
+      "import": "./dist/helpers.js",
+      "types": "./dist/helpers.d.ts"
+    },
+    "./personal": {
+      "import": "./dist/personal.js",
+      "types": "./dist/personal.d.ts"
+    }
   },
   "files": [
     "dist"
