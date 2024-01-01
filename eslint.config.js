@@ -1,15 +1,11 @@
-/* eslint-disable import/no-unresolved */ // <-- Workaround for a bug
+import { ignores } from '@jjangga0214/eslint-config/helpers'
+import javascript from '@jjangga0214/eslint-config/javascript'
+import typescript from '@jjangga0214/eslint-config/typescript'
 
-const { ignores } = require('@jjangga0214/eslint-config/helpers')
-const javascript = require('@jjangga0214/eslint-config/javascript')
-const commonjs = require('@jjangga0214/eslint-config/commonjs')
-const typescript = require('@jjangga0214/eslint-config/typescript')
-
-module.exports = [
+export default [
   { ignores },
   ...javascript,
   ...typescript,
-  ...commonjs,
   {
     files: ['packages/eslint-config/src/*.ts'],
     rules: {

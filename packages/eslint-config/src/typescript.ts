@@ -1,9 +1,9 @@
 // @ts-expect-error no declaration file
-import * as importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
-import * as tsParser from '@typescript-eslint/parser'
+import tsParser from '@typescript-eslint/parser'
 // @ts-expect-error no declaration file
-import * as airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
+import airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared.js'
 import globals from 'globals'
 import personal from './personal.js'
 

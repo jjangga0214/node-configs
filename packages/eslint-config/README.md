@@ -47,16 +47,14 @@ npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 **eslint.config.js**:
 
 ```js
-import helpers from '@jjangga0214/eslint-config/helpers'
+import { ignores } from '@jjangga0214/eslint-config/helpers'
 import javascript from '@jjangga0214/eslint-config/javascript'
 import typescript from '@jjangga0214/eslint-config/typescript'
 import jest from '@jjangga0214/eslint-config/jest'
 import react from '@jjangga0214/eslint-config/react'
 
 export default [
-  {
-    ignores: helpers.ignores,
-  },
+  { ignores, },
   // The order matters!
   ...javascript, // You MUST include this even for typescript and jsx.
   ...typescript, // Include this only if you use typescript

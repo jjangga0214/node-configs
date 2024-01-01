@@ -6,9 +6,9 @@ import markdown from 'eslint-plugin-markdown'
 // @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 // @ts-expect-error no declaration file
-import * as importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
-import * as tsParser from '@typescript-eslint/parser'
+import tsParser from '@typescript-eslint/parser'
 
 export default [
   {

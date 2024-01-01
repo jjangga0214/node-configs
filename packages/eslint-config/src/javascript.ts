@@ -3,7 +3,7 @@ import js from '@eslint/js'
 // @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 // @ts-expect-error no declaration file
-import * as importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error no declaration file
 import airbnbBestPractices from 'eslint-config-airbnb-base/rules/best-practices'
 // @ts-expect-error no declaration file
@@ -83,4 +83,4 @@ export default [
     rules: airbnbStrict.rules,
   },
   ...personal,
-] as Record<string,unknown>[]
+] as Record<string, unknown>[]
