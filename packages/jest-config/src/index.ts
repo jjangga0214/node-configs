@@ -2,11 +2,17 @@ import { pathsToModuleNameMapper } from 'ts-jest'
 
 export { pathsToModuleNameMapper } from 'ts-jest'
 
+export interface ProduceConfigOptions {
+  tsConfig: {
+    compilerOptions: { paths: Record<string, string[]> }
+  }
+}
+
 export function produceConfig({
   tsConfig: {
     compilerOptions: { paths },
   },
-}) {
+}: ProduceConfigOptions) {
   return {
     ...config,
     moduleNameMapper: {
