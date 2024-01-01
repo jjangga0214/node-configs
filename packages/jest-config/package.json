@@ -3,10 +3,11 @@
   "version": "4.6.1",
   "description": "A sharable config package and development environment for jest",
   "license": "MIT",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "exports": "./index.js",
   "files": [
     "index.js"
   ],
