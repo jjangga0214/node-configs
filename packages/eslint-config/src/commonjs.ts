@@ -1,9 +1,9 @@
 // @ts-expect-error no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import helpers from './helpers'
+import helpers from './helpers.js'
 
-export = [
+export default [
   {
     files: helpers.files.javascript.plain,
     languageOptions: {

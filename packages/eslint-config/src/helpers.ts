@@ -48,4 +48,4 @@ const helpers: ReadonlyDeep<typeof others & { globals: typeof globals }> = {
   globals,
 }
 
-export = helpers
+export default helpers

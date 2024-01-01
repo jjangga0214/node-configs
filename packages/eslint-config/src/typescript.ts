@@ -1,14 +1,13 @@
 // @ts-expect-error no declaration file
 import * as importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
-// @ts-expect-error no declaration file
 import * as tsParser from '@typescript-eslint/parser'
 // @ts-expect-error no declaration file
 import * as airbnbTsLibShared from 'eslint-config-airbnb-typescript/lib/shared'
 import globals from 'globals'
-import personal from './personal'
+import personal from './personal.js'
 
-export = [
+export default [
   {
     files: ['**/*.{c,m,}ts'],
     languageOptions: {
@@ -116,4 +115,4 @@ export = [
     rules: importPlugin.configs.typescript.rules,
   },
   ...personal,
-] as const
+] as Record<string, unknown>[]

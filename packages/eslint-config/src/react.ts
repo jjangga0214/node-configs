@@ -13,9 +13,9 @@ import reactHooks from 'eslint-plugin-react-hooks'
 // @ts-expect-error no declaration file
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import globals from 'globals'
-import personal from './personal'
+import personal from './personal.js'
 
-export = [
+export default [
   {
     // name: "personal:react/filename-case",
     files: ['**/*.{c,m,}{j,t}s{x,}'],

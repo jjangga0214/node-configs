@@ -1,10 +1,10 @@
-import helpers from './helpers'
-import javascript from './javascript'
-import jest from './jest'
-import typescript from './typescript'
-import react from './react'
+import helpers from './helpers.js'
+import javascript from './javascript.js'
+import jest from './jest.js'
+import typescript from './typescript.js'
+import react from './react.js'
 
-export = [
+export default [
   {
     ignores: helpers.ignores,
   },

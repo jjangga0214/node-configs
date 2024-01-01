@@ -8,10 +8,9 @@ import unicorn from 'eslint-plugin-unicorn'
 // @ts-expect-error no declaration file
 import * as importPlugin from 'eslint-plugin-import'
 import ts from '@typescript-eslint/eslint-plugin'
-// @ts-expect-error no declaration file
 import * as tsParser from '@typescript-eslint/parser'
 
-export = [
+export default [
   {
     // name: "eslint-config-prettier",
     rules: prettierConfig.rules,
@@ -181,4 +180,4 @@ export = [
       'import/no-extraneous-dependencies': 'off',
     },
   },
-] as const
+] as Record<string, unknown>[]

@@ -3,6 +3,7 @@
   "version": "4.6.0",
   "description": "A sharable eslint config for javascript, typescript, and jest",
   "license": "MIT",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },

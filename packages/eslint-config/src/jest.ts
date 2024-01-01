@@ -2,7 +2,7 @@
 import jest from 'eslint-plugin-jest'
 import globals from 'globals'
 
-export = [
+export default [
   {
     // Part of "plugin:jest/all",
     files: ['**/*.snap'],
@@ -43,6 +43,7 @@ export = [
     },
     rules: {
       'jest/consistent-test-it': 'off',
+      'jest/prefer-expect-assertions': 'off',
     },
   },
-]
+] as const

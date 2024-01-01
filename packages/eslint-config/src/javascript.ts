@@ -19,9 +19,9 @@ import airbnbImports from 'eslint-config-airbnb-base/rules/imports'
 // @ts-expect-error no declaration file
 import airbnbStrict from 'eslint-config-airbnb-base/rules/strict'
 import globals from 'globals'
-import personal from './personal'
+import personal from './personal.js'
 
-export = [
+export default [
   {
     files: ['**/*.{c,m,}js'],
     languageOptions: {
@@ -83,4 +83,4 @@ export = [
     rules: airbnbStrict.rules,
   },
   ...personal,
-] as const
+] as Record<string,unknown>[]
