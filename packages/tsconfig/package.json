@@ -3,10 +3,11 @@
   "version": "3.5.0",
   "description": "A sharable config package for Typescript",
   "license": "MIT",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "main": "tsconfig.json",
+  "exports": "./tsconfig.json",
   "files": [
     "tsconfig.json"
   ],
