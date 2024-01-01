@@ -32,4 +32,17 @@ export = [
     },
     rules: jest.configs.all.rules,
   },
+  {
+    // personal:jest
+    files: [
+      '**/*.{test,spec}.{c,m,}{j,t}s{x,}',
+      '**/__tests__/**/*.{c,m,}{j,t}s{x,}',
+    ],
+    plugins: {
+      jest,
+    },
+    rules: {
+      'jest/consistent-test-it': 'off',
+    },
+  },
 ]

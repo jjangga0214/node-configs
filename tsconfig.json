@@ -4,6 +4,10 @@
     "target": "ES2021",
     "lib": ["ES2021"],
     "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
+  // REF: https://typestrong.org/ts-node/docs/transpilers
+  "ts-node": {
+    "esm": false
+  }
 }
