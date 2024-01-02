@@ -42,7 +42,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 
 ```jsonc
 {
-  "extends": "./node_modules/@jjangga0214/markdownlint-config/index.json"
+  "extends": "@jjangga0214/markdownlint-config"
   // You can override/add rules here.
 }
 ```
@@ -53,10 +53,4 @@ npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 .git
 **/node_modules
 # specify any patterns you need
-```
-
-## Usage for import
-
-```js
-import markdownlintConfig from "@jjangga0214/markdownlint-config";
 ```
