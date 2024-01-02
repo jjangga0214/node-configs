@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/commitlint-config",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A sharable config package and development environment for commitlint",
   "license": "MIT",
   "type": "commonjs",
