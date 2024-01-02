@@ -44,6 +44,7 @@ export default [
     rules: {
       'jest/consistent-test-it': 'off',
       'jest/prefer-expect-assertions': 'off',
+      'jest/max-expects': 'off',
     },
   },
 ] as const
