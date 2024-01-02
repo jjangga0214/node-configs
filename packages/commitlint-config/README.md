@@ -13,7 +13,7 @@ pnpm add --save-dev @jjangga0214/commitlint-config
 ```
 
 And you should also install `peerDependencies` manually.
-Checkout package.json or `npm info`.
+Check out package.json or `npm info`.
 
 ```sh
 # This does not install them all. This just show them on terminal.

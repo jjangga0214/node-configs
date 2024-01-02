@@ -13,7 +13,7 @@ pnpm add --save-dev @jjangga0214/prettier-config
 ```
 
 And you should also install `peerDependencies` manually.
-Checkout package.json or `npm info`.
+Check out package.json or `npm info`.
 
 ```sh
 # This does not install them all. This just show them on terminal.
@@ -43,15 +43,14 @@ npx install-peerdeps --pnpm --dev @jjangga0214/prettier-config
 }
 ```
 
-Or you can import it into javascript config file.
+Or you can import it into the javascript config file.
 
 **.prettierrc.js**:
 
 ```js
-module.exports = {
-  ...require("@jjangga0214/prettier-config"),
-  // You can override some fileds
-};
+import config from '@jjangga0214/prettier-config'
+
+export default config
 ```
 
 ## Development

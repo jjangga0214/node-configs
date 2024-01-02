@@ -7,4 +7,4 @@ export default {
   endOfLine: 'lf',
   // bracketSpacing: true
   //   printWidth: 80
-}
+} as const
