@@ -12,8 +12,8 @@ yarn add --dev @jjangga0214/jest-config
 pnpm add --save-dev @jjangga0214/jest-config
 ```
 
-And you should also install peerDependencies manually.
-Checkout package.json or `npm info`.
+And you should also install `peerDependencies` manually.
+Check out package.json or `npm info`.
 
 ```sh
 # This does not install them all. This just show them on terminal.
@@ -41,13 +41,15 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 
 ### For a project not using an alias
 
-If your project is pure javascript or does not need [Typescript paths mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and jest's [`moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly,
+If your project is pure javascript or does not need [Typescript paths mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and jest's [`moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly.
 
 ```js
-import { config } from '@jjangga0214/jest-config'
+import config from '@jjangga0214/jest-config'
+
+export default config
 ```
 
-instead of `produceConfig` (function).
+Otherwise, consider `produceConfig` (function).
 
 ```js
 import { produceConfig } from '@jjangga0214/jest-config'
@@ -58,8 +60,8 @@ import { produceConfig } from '@jjangga0214/jest-config'
 **jest.config.js**:
 
 ```js
+import { createRequire } from 'node:module'
 import { produceConfig } from '@jjangga0214/jest-config'
-import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
 // `./tsconfig.json` should not have comment in order to import.
@@ -67,11 +69,11 @@ const tsConfig = require('./tsconfig.json')
 
 export default {
   ...produceConfig({ tsConfig }),
-  // You can override other fields as well.
+  // And possibly override other fields.
   // transform: {
   //   '.(ts|tsx)': 'ts-jest',
   // },
-};
+}
 ```
 
 ### For a monorepo
@@ -81,24 +83,23 @@ export default {
 For monorepo, you probably want to configure [`projects`](https://jestjs.io/docs/configuration#projects-arraystring--projectconfig).
 
 ```js
-const { produceConfig } = require("@jjangga0214/jest-config");
-import { createRequire } from 'module'
+import { createRequire } from 'node:module'
+import { produceConfig } from '@jjangga0214/jest-config'
 
 const require = createRequire(import.meta.url)
-// `./tsconfig.json` should not have comment in order to import.
+// `./tsconfig.json` should not include comment to be imported.
 const tsConfig = require('./tsconfig.json')
 
-const baseConfig = {
+export const config = {
   ...produceConfig({ tsConfig }),
-  // You can override other fields as well.
+  // And possibly override other fields.
   // transform: {
   //   '.(ts|tsx)': 'ts-jest',
   // },
 };
 
 export default {
-  baseConfig,
-  ...baseConfig,
+  ...config,
   projects: [
     '<rootDir>',
     '<rootDir>/packages/*',
@@ -107,20 +108,20 @@ export default {
     '<rootDir>/libs/*',
     '<rootDir>/workflows/*',
   ],
-};
-```
-
-**jest.config.js** in each sub projects:
-
-```js
-import { baseConfig } from '../../jest.config.js'
-
-export default {
- ...baseConfig,
-  // You can override other fields as well. 
 }
 ```
 
-**However**, for monorepo with certain situation, it is OK that you don't depend on [`projects`](https://jestjs.io/docs/configuration#projects-arraystring--projectconfig). You may be able to treat your monorepo like a single project repo. JEST may still work well.
+**jest.config.js** in each sub-project:
+
+```js
+import { config } from '../../jest.config.js'
+
+export default {
+ ...config,
+  // And possibly override other fields.
+}
+```
+
+**However**, for monorepo with certain situations, it is OK that you don't depend on [`projects`](https://jestjs.io/docs/configuration#projects-arraystring--projectconfig). You may be able to treat your monorepo like a single project repo. JEST may still work well.
 
 There is an issue of `projects`:  <https://github.com/facebook/jest/issues/12230>
