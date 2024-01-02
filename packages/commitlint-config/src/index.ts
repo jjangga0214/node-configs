@@ -1,4 +1,6 @@
-module.exports = {
+// Why not `export default`, but `export = { }`?
+// REF: https://github.com/microsoft/TypeScript/issues/2719
+export = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'header-max-length': [0, 'always', 100],
@@ -14,4 +16,4 @@ module.exports = {
       scopeEnumSeparator: ',',
     },
   },
-}
+} as const

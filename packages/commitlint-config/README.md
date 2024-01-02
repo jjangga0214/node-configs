@@ -46,3 +46,9 @@ module.exports = {
   // rules: { ... } // You can override it.
 };
 ```
+
+## CJS and ESM
+
+This package is intentionally CJS.
+Once commitlint starts supporting ESM, this package becomes also free to migrate.
+Refer to <https://github.com/conventional-changelog/commitlint/issues/3705>

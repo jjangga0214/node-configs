@@ -115,8 +115,8 @@ export default [
 
 ## tsconfig.json and `@jjangga0214/eslint-config/typescript`
 
-By default, `./packages/*/tsconfig.json` and/or (if not found) `./tsconfig.json` are targets to search. 
-If your tsconfig file is named/located differently (e.g. `tsconfig.eslint.json`), 
+By default, `./packages/*/tsconfig.json` and/or (if not found) `./tsconfig.json` are targets to search.
+If your tsconfig file is named/located differently (e.g. `tsconfig.eslint.json`),
 override
 `languageOptions.parserOptions.project`
 AND

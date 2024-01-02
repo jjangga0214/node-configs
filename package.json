@@ -12,6 +12,9 @@
   "packageManager": "pnpm@8.12.1",
   "prettier": "@jjangga0214/prettier-config",
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@jjangga0214/markdownlint-config": "workspace:*",
+    "@jjangga0214/commitlint-config": "workspace:*",
     "@jjangga0214/eslint-config": "workspace:*",
     "@jjangga0214/prettier-config": "workspace:*",
     "@jjangga0214/tsconfig": "workspace:*",
@@ -19,10 +22,26 @@
     "@swc/helpers": "^0.5.3",
     "@types/node": "^20.10.6",
     "eslint": "^8.56.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "markdownlint-cli": "^0.38.0",
     "prettier": "^3.1.1",
     "regenerator-runtime": "^0.13.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --fix"
+  },
+  "lint-staged": {
+    "*.{c,m,}{j,t}{x,}": [
+      "eslint --fix"
+    ],
+    "*.md": [
+      "eslint --fix",
+      "markdownlint --fix"
+    ]
   },
   "repository": {
     "type": "git",

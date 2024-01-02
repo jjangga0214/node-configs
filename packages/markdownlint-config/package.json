@@ -6,9 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "type": "module",
+  "exports": "./index.json",
   "files": [
-    "index.js",
     "index.json"
   ],
   "repository": {
