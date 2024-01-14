@@ -53,6 +53,7 @@ export default [
       'no-shadow': 'off',
       'no-unused-vars': 'off',
       'no-underscore-dangle': 'off',
+      'no-continue': 'off',
     },
     linterOptions: {
       reportUnusedDisableDirectives: true, // REF: https://eslint.org/docs/latest/use/configure/rules#report-unused-eslint-disable-comments
@@ -177,6 +178,13 @@ export default [
     },
     rules: {
       'import/no-unresolved': 'off',
+      'import/no-extraneous-dependencies': 'off',
+    },
+  },
+  {
+    // name: "personal:haetae",
+    files: ['**/haetae.config.{c,m,}{j,t}s'],
+    rules: {
       'import/no-extraneous-dependencies': 'off',
     },
   },
