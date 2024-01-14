@@ -26,9 +26,9 @@ Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peer
 # For npm
 npx install-peerdeps --dev @jjangga0214/jest-config
 # For yarn
-npx install-peerdeps --yarn --dev @jjangga0214/jest-config
+yarn dlx install-peerdeps --yarn --dev @jjangga0214/jest-config
 # For pnpm
-npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
+pnpm dlx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 ```
 
 ## Notes
@@ -44,9 +44,7 @@ npx install-peerdeps --pnpm --dev @jjangga0214/jest-config
 If your project is pure javascript or does not need [Typescript paths mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) and jest's [`moduleNameMapper`](https://jestjs.io/docs/configuration#modulenamemapper-objectstring-string--arraystring), then you can just import a config(json) directly.
 
 ```js
-import config from '@jjangga0214/jest-config'
-
-export default config
+export { default } from '@jjangga0214/jest-config'
 ```
 
 Otherwise, consider `produceConfig` (function).

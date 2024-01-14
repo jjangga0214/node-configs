@@ -23,13 +23,13 @@ npm info "@jjangga0214/eslint-config@latest" peerDependencies
 
 Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peerdeps/documentation).
 
-```sh
+```bash
 # For npm
 npx install-peerdeps --dev @jjangga0214/eslint-config
 # For yarn
-npx install-peerdeps --yarn --dev @jjangga0214/eslint-config
+yarn dlx install-peerdeps --yarn --dev @jjangga0214/eslint-config
 # For pnpm
-npx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
+pnpm dlx install-peerdeps --pnpm --dev @jjangga0214/eslint-config
 ```
 
 ## Entrypoints
@@ -63,12 +63,10 @@ export default [
 ]
 ```
 
-The example above is equivalent to just directly importing `@jjangga0214/eslint-config`.
+The example above is equivalent to the default export of `@jjangga0214/eslint-config`.
 
 ```js
-import config from '@jjangga0214/eslint-config'
-
-export default config
+export { default } from '@jjangga0214/eslint-config'
 ```
 
 ESM is configured by default.
@@ -124,7 +122,7 @@ AND
  from typescript config.
 
 ```js
-{ 
+{
   // ...
   languageOptions:{
     // ...
@@ -143,13 +141,13 @@ AND
         ]
       },
     },
-  }  
+  }
 }
 ```
 
 ## Development Note
 
-The config depends on other popular sharable configs.
+The config depends on other popular shareable configs.
 Some of them do not provide flat configs, yet.
 So `@jjangga0214/eslint-config` [transforms them internally](https://github.com/eslint/eslint/discussions/16291).
 Though more concise porting is possible, they are intentionally converted as-is for comparability.

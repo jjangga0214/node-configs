@@ -26,9 +26,9 @@ Or install them all by [`install-peerdeps`](https://openbase.com/js/install-peer
 # For npm
 npx install-peerdeps --dev @jjangga0214/markdownlint-config
 # For yarn
-npx install-peerdeps --yarn --dev @jjangga0214/markdownlint-config
+yarn dlx install-peerdeps --yarn --dev @jjangga0214/markdownlint-config
 # For pnpm
-npx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
+pnpm dlx install-peerdeps --pnpm --dev @jjangga0214/markdownlint-config
 ```
 
 ## Note
