@@ -48,9 +48,7 @@ Or you can import it into the javascript config file.
 **.prettierrc.js**:
 
 ```js
-import config from '@jjangga0214/prettier-config'
-
-export default config
+export { default } from '@jjangga0214/prettier-config'
 ```
 
 ## Development
