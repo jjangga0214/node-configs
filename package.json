@@ -9,7 +9,7 @@
     "node": ">=20",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@8.14.1",
   "prettier": "@jjangga0214/prettier-config",
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",

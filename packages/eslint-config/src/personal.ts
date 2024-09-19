@@ -108,6 +108,20 @@ export default [
       '@typescript-eslint/no-shadow': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          // e.g. `{ fn(_) { ... } }` when argument starts with `_`,
+          // @typescript-eslint/no-unused-vars is ignored for that argument
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
     },
     settings: {
       'import/parsers': {
