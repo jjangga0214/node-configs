@@ -1,6 +1,6 @@
 {
   "name": "@jjangga0214/eslint-config",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A sharable eslint config for javascript, typescript, and jest",
   "license": "MIT",
   "type": "module",
